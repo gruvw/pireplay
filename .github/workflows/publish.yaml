@@ -17,4 +17,4 @@ jobs:
           pypi_token: ${{ secrets.PYPI_TOKEN }}
           package_directory: "pireplay"
           repository_name: "testpypi"
-          repository_url: "https://test.pypi.org/simple/"
+          repository_url: "https://test.pypi.org/legacy/"
