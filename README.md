@@ -18,6 +18,7 @@ Here are the instructions (tutorial) for setting up a fully working **PiReplay**
 - Raspberry Pi Zero 2 W board
 - Micro SD card 64 GB
 - Raspberry Pi Camera module 3 (NoIR wide 120FOV, black)
+- CSI Camera FPC connector cable to Raspberry Pi Zero
 - Micro USB cable
 
 ### Raspberry Pi Zero Setup

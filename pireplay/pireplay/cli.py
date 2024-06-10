@@ -2,4 +2,4 @@ import click
 
 @click.command()
 def cli():
-    print("Hello PyReplay!")
+    print("Hello PiReplay!")
