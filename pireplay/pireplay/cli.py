@@ -1,5 +1,5 @@
 import click
 
 @click.command()
-def cli():
+def run():
     print("Hello PiReplay!")

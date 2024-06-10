@@ -11,7 +11,7 @@ flask = "^3.0.3"
 click = "^8.1.7"
 
 [tool.poetry.scripts]
-pireplay = "pireplay.cli:cli"
+pireplay = "pireplay.cli:run"
 
 [build-system]
 requires = ["poetry-core"]
