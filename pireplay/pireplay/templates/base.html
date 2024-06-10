@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>PiReplay - {% block title %}{% endblock %}</title>
+
+  <link rel="stylesheet" href={{ url_for("static", filename="base.css") }}>
+  <link rel="stylesheet" href={{ url_for("static", filename="style.css") }}>
+  <link rel="icon" type="image/png" href={{ url_for("static", filename="favicon.png") }}>
+</head>
+
+<body>
+  <header>
+    <a id="theme-toggle"></a>
+    <a id="app-title" href="/">PiReplay</a>
+    <a id="github" href="https://github.com/gruvw/pireplay" target="_blank">GitHub</a>
+  </header>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <script>
+    // Dark / Light Theme switcher
+
+    const theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    if (theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+    }
+
+    const toggleTheme = document.getElementById("theme-toggle");
+    toggleTheme.onclick = function() {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        const targetTheme = currentTheme === "light" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", targetTheme)
+        localStorage.setItem("theme", targetTheme);
+    };
+  </script>
+</body>
+
+</html>

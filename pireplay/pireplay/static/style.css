@@ -1,0 +1,72 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 100%;
+    background-color: var(--black);
+    font-family: "Fira Code", monospace;
+    color: var(--white);
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: var(--content);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: var(--section);
+    text-align: center;
+}
+
+p {
+    font-size: var(--content);
+    text-align: center;
+}
+
+header {
+    border-bottom: 3px solid var(--white);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+video {
+    width: 100%;
+    max-width: 720px;
+}
+
+.video {
+    display: flex;
+    justify-content: center;
+    margin: 0px 20px;
+}
+
+.past-replay {
+    display: block;
+    text-align: center;
+    margin: 0px;
+    color: var(--purple);
+}
+
+.current-replay {
+    color: var(--red);
+}
+
+#github {
+    color: var(--green);
+    font-size: var(--content);
+}
+
+#app-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--title);
+    text-decoration: none;
+}

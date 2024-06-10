@@ -2,12 +2,16 @@
 
 Capture and instantly replay the last moments using a Raspberry Pi and a camera with a WEB application.
 
-## Repository Structure
+Take a look at the project's [roadmap](docs/roadmap.md) to see upcoming features (and all the work accomplished).
+
+**Note**: check out the `pireplay` python package (CLI) on PyPI <https://pypi.org/project/pireplay/>.
+
+## Project Structure
 
 A short description of the project's structure for quick reference:
 
-- `src`: the source code of the [Python](https://www.python.org/) `pireplay` package (using [Poetry](https://python-poetry.org/))
 - `cad`: for 3D models files, 3D printing
+- `pireplay`: the source code of the [Python](https://www.python.org/) `pireplay` package (using [Poetry](https://python-poetry.org/))
 
 ## Do It Yourself
 
@@ -44,10 +48,22 @@ You are now connected via SSH to your brand new Raspberry Pi Zero.
 
 ### PiReplay Setup
 
-TODO
+Once connected to the Raspberry Pi via SSH, you can install and set up the `pireplay` software to run on it.
+
+<!-- TODO document PiReplay software install + setup -->
+
+INSTRUCTIONS NOT FINISHED
 
 ## Contributions
 
 Feel free to contribute by submitting pull requests, whether to add new features, improve existing functionality, or fix bugs :)
 
 Before opening a new PR, make sure to open an issue to discuss it beforehand (first check if a similar issue does not already exist).
+
+## Powered by
+
+This project would not be possible without the incredible technologies below:
+
+* [Python](https://www.python.org/)
+* [Flask](https://github.com/pallets/flask/)
+* [Raspberry Pi](https://www.raspberrypi.com/)

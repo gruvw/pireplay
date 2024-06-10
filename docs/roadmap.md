@@ -1,0 +1,23 @@
+# PiReplay Roadmap
+
+- [X] Set up Repository with good structure
+- [X] Python package `pireplay` poetry project + release CI to PyPI
+- [X] Design the basic website on Figma (+ implement feedback from UI/UX designers)
+- [X] Set up `Flask` server with common basic routes
+- [X] Configure python CLI `click` program entrypoint (using poetry package)
+- [X] Document installation and setup of RPI Zero on README
+- [X] Basic WEB Flask templates (css + html)
+- [X] Light and Dark theme (CSS)
+- [ ] Implement WEB page for home page + replay
+- [ ] Python config management module (override default config from WEB posts settings values routes)
+- [ ] Implement WEB page for settings
+- [ ] Pass yaml configuration file to CLI program to override defaults
+- [ ] Configuration of RPI hotspot using python (CLI configure + reset), possible to keep internet connection via WiFi ?
+- [ ] RPI camera module circular capture and video save on WEB button press
+- [ ] RPI camera module circular capture configuration of resolution + duration change on the fly (using settings endpoints)
+- [ ] CLI click documentation (proper `--help`)
+- [ ] 3D print case for the device
+- [ ] 3D print documentation and DIY instructions on README
+- [ ] On the fly new WiFi network connection from local WEB server (list SSIDs and input password)
+- [ ] Document usage (user guide) on README
+- [ ] Document final result (pictures of hardware + UI) on README

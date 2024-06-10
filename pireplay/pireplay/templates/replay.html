@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block title %}Replay{% endblock %}
+
+{% block replay %}
+<section>
+  <h2>Replay</h2>
+  <p>{{ replay }}</p>
+
+  <div class="video">
+    <video controls autoplay muted>
+      <source src={{ url_for("raw_replay", replay_path=replay + ".mp4") }} type="video/mp4">
+      Your browser does not support HTML videos.
+    </video>
+  </div>
+</section>
+{% endblock %}

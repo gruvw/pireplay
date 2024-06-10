@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% block replay %}
+{% endblock %}
+
+<section>
+  <h2>Past Replays</h2>
+
+  {% if past_replays | length > 0 %}
+    <div>
+    {% for pr in past_replays %}
+      {% if replay and replay == pr %}
+      <p class="past-replay current-replay">
+        {{ pr }}
+      </p>
+      {% else %}
+      <a class="past-replay" href={{ url_for("replay", replay=pr) }}>
+        {{ pr }}
+      </a>
+      {% endif %}
+    {% endfor %}
+    </div>
+  {% else %}
+    <p>No past replay...</p>
+  {% endif %}
+</section>
+{% endblock %}

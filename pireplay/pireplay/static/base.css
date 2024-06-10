@@ -1,0 +1,46 @@
+:root {
+    --black: #222222;
+    --white: #F7F1FF;
+    --green: #7BD88F;
+    --red: #FC618D;
+    --purple: #948AE3;
+    --yellow: #FCE566;
+    --blue: #5AD4E6;
+
+    --title: 2em;
+    --sub-title: 1.75em;
+    --section: 1.5em;
+    --content: 1.25em;
+}
+
+html[data-theme="light"] {
+    /* TODO improve light theme colors */
+    --white: #222222;
+    --black: #F7F1FF;
+}
+
+#theme-toggle {
+    font-size: var(--content);
+}
+
+html[data-theme="light"] #theme-toggle::after {
+    content: "Light";
+}
+
+html[data-theme="dark"] #theme-toggle::after {
+    content: "Dark";
+}
+
+@font-face {
+    font-family: "Fira Code";
+    src: url("/static/fonts/FiraCode-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fira Code";
+    src: url("/static/fonts/FiraCode-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}

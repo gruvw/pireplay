@@ -1,9 +1,13 @@
 [tool.poetry]
 name = "pireplay"
-version = "0.0.1"
+version = "0.0.2"
 description = "Capture and instantly replay the last moments using a Raspberry Pi and a camera with a WEB application."
 authors = ["gruvw <gruvw.dev@gmail.com>"]
 readme = "README.md"
+homepage = "https://github.com/gruvw/pireplay"
+repository = "https://github.com/gruvw/pireplay"
+documentation = "https://github.com/gruvw/pireplay"
+keywords = ["camera", "rpi", "raspberry-pi", "cli"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -11,7 +15,9 @@ flask = "^3.0.3"
 click = "^8.1.7"
 
 [tool.poetry.scripts]
-pireplay = "pireplay.cli:run"
+pireplay = "pireplay.cli:cli"
+
+# Run in dev: `sudo /root/.local/bin/poetry run pireplay serve`
 
 [build-system]
 requires = ["poetry-core"]
