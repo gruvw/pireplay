@@ -4,6 +4,13 @@
 
 {% block content %}
 
+<div class="actions">
+  <a id="settings" href={{ url_for("settings") }}>Settings</a>
+  <form action={{ url_for("capture") }} method="post">
+    <button id="capture">CAPTURE</button>
+  </form>
+</div>
+
 {% block replay %}
 {% endblock %}
 

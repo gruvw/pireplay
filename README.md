@@ -1,6 +1,6 @@
 # PiReplay
 
-Capture and instantly replay the last moments using a Raspberry Pi and a camera with a WEB application.
+Capture and instantly replay the last moments using a Raspberry Pi and a camera with a web application.
 
 Take a look at the project's [roadmap](docs/roadmap.md) to see upcoming features (and all the work accomplished).
 

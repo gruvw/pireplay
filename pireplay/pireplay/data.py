@@ -1,3 +1,10 @@
+from datetime import datetime
+
+
+def get_new_replay_name():
+    return datetime.now().strftime("%Y_%m_%d - %H:%M:%S")
+
+
 def get_past_replays():
     # TODO get past replays from directory
     return [

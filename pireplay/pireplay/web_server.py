@@ -1,21 +1,8 @@
+from minify_html import minify
 from flask import Flask, render_template, redirect, url_for, send_from_directory
 
 import pireplay.data as data
-
-
-class Template:
-    home = "index.html"
-    replay = "replay.html"
-    settings = "settings.html"
-
-
-class Route:
-    index = "/"
-    replay = "/replay/<string:replay>"
-    raw_replay = "/raw-replay/<path:replay_path>"
-    settings = "/settings"
-    capture = "/capture"
-    # TODO settings value routes
+from pireplay.consts import VIDEO_EXT, Route, Template, Header
 
 
 server = Flask(__name__)
@@ -40,10 +27,10 @@ def replay(replay):
 
 
 @server.route(Route.raw_replay)
-def raw_replay(replay_path):
+def raw_replay(replay):
     # TODO serve video files
 
-    return send_from_directory("dummy_video_path", replay_path)
+    return send_from_directory("dummy_video_path", replay + VIDEO_EXT)
 
 
 @server.route(Route.settings)
@@ -54,6 +41,20 @@ def settings():
 @server.route(Route.capture, methods=["POST"])
 def capture():
     # TODO save video to file and return replay name
-    replay_name = "dummy_replay_name"
+    replay_name = data.get_new_replay_name()
 
-    return redirect(url_for(replay.__name__, replay=replay_name))
+    response = redirect(url_for(replay.__name__, replay=replay_name))
+    response.headers.add(
+        Header.raw_replay,
+        url_for(raw_replay.__name__, replay=replay_name)
+    )
+
+    return response
+
+
+@server.after_request
+def response_minify(response):
+    if "text/html" in response.content_type:
+        response.set_data(minify(response.get_data(as_text=True)))
+
+    return response

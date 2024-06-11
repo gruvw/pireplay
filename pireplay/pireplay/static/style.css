@@ -7,14 +7,19 @@ body {
     color: var(--white);
 }
 
+button {
+    all: unset;
+}
+
 a {
     text-decoration: none;
     color: var(--white);
     font-size: var(--content);
 }
 
-a:hover {
+a:hover, button:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 h2 {
@@ -58,6 +63,20 @@ video {
     color: var(--red);
 }
 
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.actions > * {
+    text-align: center;
+    width: min-content;
+}
+
 #github {
     color: var(--green);
     font-size: var(--content);
@@ -69,4 +88,18 @@ video {
     transform: translateX(-50%);
     font-size: var(--title);
     text-decoration: none;
+}
+
+#settings {
+    color: var(--blue);
+}
+
+#capture {
+    color: var(--red);
+    border: 5px solid var(--red);
+    font-size: var(--intense);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
 }
