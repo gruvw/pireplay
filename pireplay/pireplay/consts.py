@@ -18,3 +18,18 @@ class Route:
     settings = "/settings"
     capture = "/capture"
     # TODO settings value routes
+
+
+class Config:
+    # see `default_config.yaml` for fields documentation
+
+    capture_time = "capture_time"
+    kept_replays = "kept_replays"
+    replays_location = "replays_location"
+    replay_name = "replay_name"
+    # TODO resolution + frame rate
+    # TODO wifi hotspot SSID and password
+
+
+class Option:
+    capture_times = [60, 30, 20, 10, 5, 3]

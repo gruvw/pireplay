@@ -1,8 +1,10 @@
 from datetime import datetime
 
+from pireplay.config import config, Config
+
 
 def get_new_replay_name():
-    return datetime.now().strftime("%Y_%m_%d - %H:%M:%S")
+    return datetime.now().strftime(config(Config.replay_name))
 
 
 def get_past_replays():

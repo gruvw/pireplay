@@ -1,0 +1,16 @@
+---
+# Number of seconds to record on capture
+# minimum 1, maximum 60
+capture_time: 30
+
+# Number of replays to keep on disk (if full, oldest is deleted)
+# minimum 1, maximum 500 (check SD card storage)
+kept_replays: 25
+
+# Location where the replays are kept on disk
+replays_location: "~/pireplay/replays/"
+
+# Name given to a new replay
+# must be unique, or it will override the file with the same name
+# support `strftime` strings, see https://strftime.org/ or `man strftime 3`
+replay_name: "%Y_%m_%d - %H:%M:%S"
