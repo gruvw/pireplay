@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from pireplay.config import config, Config
+from pireplay.config import Config, config
 
 
 def get_new_replay_name():

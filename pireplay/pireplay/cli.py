@@ -1,6 +1,6 @@
 import click
 
-from pireplay.config import update_config_from_string
+from pireplay.config import safe_update_config_from_string
 from pireplay.web_server import server
 
 
@@ -21,7 +21,7 @@ def cli():
 @config_option
 def serve(config):
     if config:
-        update_config_from_string(config.read())
+        safe_update_config_from_string(config.read())
 
     # FIXME remove debug
     server.run(debug=True, host="0.0.0.0", port=80)

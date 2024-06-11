@@ -10,7 +10,7 @@
 - [X] Light and Dark theme (CSS)
 - [X] Implement web page for home page + replay
 - [X] Python config management module
-- [ ] Override default config from web posts settings values routes
+- [X] Override default config from web posts settings values routes
 - [ ] Implement web page for settings
 - [ ] Pass yaml configuration file to CLI program to override defaults
 - [ ] Configuration of RPI hotspot using python (CLI configure + reset), possible to keep internet connection via WiFi ?

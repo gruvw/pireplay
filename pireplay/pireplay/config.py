@@ -18,27 +18,50 @@ def update_config(new_config):
     _config.update(copy.deepcopy(new_config))
 
 
-def update_config_from_string(config):
+def validate_config_option(options, value):
     try:
-        update_config(yaml.safe_load(config))
+        index = int(value)
+    except:
+        return False, None
+
+    if 0 > index or index >= len(options):
+        return False, None
+
+    return True, index
+
+
+def safe_update_config_from_string(config_string):
+    try:
+        update_config(yaml.safe_load(config_string))
     except:
         print("Config loading error: invalid config.")
         exit(1)
 
-    print(_config)
+    valid_options = [
+        validate_config_option(options, config(config_field))[0]
+        for config_field, options in Config.config_options
+    ]
+
+    if not all(valid_options):
+        index = valid_options.index(False)
+        config_field = Config.config_options[index][0]
+        print(f"Config error: invalid index for option `{config_field}`.")
+        exit(1)
 
 
-def update_key(key, value):
-    update_config({key, value})
+def update_config_field(key, value):
+    update_config({key: value})
 
 
 def config(key):
-    if key not in config:
-        return None
+    if key not in _config:
+        return ""
 
     value = _config[key]
 
     if key == Config.replays_location:
         value = os.path.expanduser(value)
+        if not os.path.exists(value):
+            os.makedirs(value)
 
     return value

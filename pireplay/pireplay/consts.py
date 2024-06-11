@@ -1,10 +1,6 @@
 VIDEO_EXT = ".mp4"
 
 
-class Header:
-    raw_replay = "Raw-Replay"
-
-
 class Template:
     home = "index.html"
     replay = "replay.html"
@@ -12,24 +8,47 @@ class Template:
 
 
 class Route:
+    # GET
     index = "/"
     replay = "/replay/<string:replay>"
     raw_replay = f"/raw-replay/<string:replay>{VIDEO_EXT}"
     settings = "/settings"
+
+    # POST
     capture = "/capture"
-    # TODO settings value routes
+    settings_capture_time = "/settings/capture-time"
+    settings_camera_resolution = "/settings/camera-resolution"
+
+
+class Option:
+    form_field = "index"
+
+    _capture_times_values = [3, 5, 10, 20, 30, 60]
+    capture_times = [(t, f"{t}s") for t in _capture_times_values]
+
+    # TODO use real camera recording options
+    camera_resolutions = [
+        (0, "2304 × 1296 30 FPS HDR"),
+        (1, "2304 × 1296 56 FPS"),
+        (2, "1536 × 864 120 FPS"),
+    ]
+
+
+class Header:
+    raw_replay = "Raw-Replay"
 
 
 class Config:
     # see `default_config.yaml` for fields documentation
-
-    capture_time = "capture_time"
+    capture_time_index = "capture_time_index"
+    camera_resolution_index = "camera_resolution_index"
     kept_replays = "kept_replays"
     replays_location = "replays_location"
     replay_name = "replay_name"
-    # TODO resolution + frame rate
+
     # TODO wifi hotspot SSID and password
 
-
-class Option:
-    capture_times = [60, 30, 20, 10, 5, 3]
+    config_options = [
+        (capture_time_index, Option.capture_times),
+        (camera_resolution_index, Option.camera_resolutions),
+    ]

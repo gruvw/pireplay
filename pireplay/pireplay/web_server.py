@@ -1,8 +1,29 @@
+import functools
 from minify_html import minify
-from flask import Flask, render_template, redirect, url_for, send_from_directory
+from flask import (
+    Flask,
+    render_template,
+    redirect,
+    url_for,
+    send_from_directory,
+    request,
+    abort
+)
 
-import pireplay.data as data
-from pireplay.consts import VIDEO_EXT, Route, Template, Header
+from pireplay import replays
+from pireplay.consts import (
+    VIDEO_EXT,
+    Route,
+    Template,
+    Header,
+    Option
+)
+from pireplay.config import (
+    Config,
+    config,
+    update_config_field,
+    validate_config_option
+)
 
 
 server = Flask(__name__)
@@ -11,7 +32,7 @@ server = Flask(__name__)
 def render_replay(replay=None):
     return render_template(
         Template.replay if replay else Template.home,
-        past_replays=data.get_past_replays(),
+        past_replays=replays.get_past_replays(),
         replay=replay,
     )
 
@@ -28,9 +49,10 @@ def replay(replay):
 
 @server.route(Route.raw_replay)
 def raw_replay(replay):
-    # TODO serve video files
-
-    return send_from_directory("dummy_video_path", replay + VIDEO_EXT)
+    return send_from_directory(
+        config(Config.replays_location),
+        replay + VIDEO_EXT,
+    )
 
 
 @server.route(Route.settings)
@@ -41,7 +63,7 @@ def settings():
 @server.route(Route.capture, methods=["POST"])
 def capture():
     # TODO save video to file and return replay name
-    replay_name = data.get_new_replay_name()
+    replay_name = replays.get_new_replay_name()
 
     response = redirect(url_for(replay.__name__, replay=replay_name))
     response.headers.add(
@@ -50,6 +72,35 @@ def capture():
     )
 
     return response
+
+
+# Helper decorator to wrap settings route with form argument (index) validation
+def settings_route(route, options):
+    def decorator(func):
+        @server.route(route, methods=["POST"])
+        @functools.wraps(func)
+        def wrapper():
+            value = request.form[Option.form_field]
+            valid, index = validate_config_option(options, value)
+
+            if not valid:
+                abort(400)
+
+            func(index)
+
+            return redirect(url_for(settings.__name__))
+        return wrapper
+    return decorator
+
+
+@settings_route(Route.settings_capture_time, Option.capture_times)
+def settings_capture_time(index):
+    update_config_field(Config.capture_time_index, index)
+
+
+@settings_route(Route.settings_camera_resolution, Option.camera_resolutions)
+def settings_camera_resolution(index):
+    update_config_field(Config.camera_resolution_index, index)
 
 
 @server.after_request

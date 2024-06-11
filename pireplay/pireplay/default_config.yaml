@@ -1,7 +1,23 @@
 ---
-# Number of seconds to record on capture
-# minimum 1, maximum 60
-capture_time: 30
+# TODO udate indexed options documentation with final values
+
+# Default number of seconds to record on capture, index in the list of options
+# (RPI in-memory circular buffer)
+# Options:
+#   0: 3 seconds
+#   1: 5 seconds
+#   2: 10 seconds
+#   3: 20 seconds
+#   4: 30 seconds
+#   5: 60 seconds
+capture_time_index: 1
+
+# Default resolution to use for the camera, index in the list of options
+# Options:
+#   0: 2304 × 1296 30 FPS HDR
+#   1: 2304 × 1296 56 FPS
+#   2: 1536 × 864 120 FPS
+camera_resolution_index: 1
 
 # Number of replays to keep on disk (if full, oldest is deleted)
 # minimum 1, maximum 500 (check SD card storage)
