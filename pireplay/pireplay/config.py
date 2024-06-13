@@ -60,8 +60,10 @@ def config(key):
     value = _config[key]
 
     if key == Config.replays_location:
-        value = os.path.expanduser(value)
+        username = os.environ.get("SUDO_USER", os.environ.get("USERNAME"))
+        value = os.path.expanduser(value.replace("~", "~" + username))
         if not os.path.exists(value):
+            # FIXME should use user's permissions
             os.makedirs(value)
 
     return value

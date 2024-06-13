@@ -73,8 +73,7 @@ def settings():
 
 @server.route(Route.capture, methods=["POST"])
 def capture():
-    # TODO save video to file and return replay name
-    replay_name = replays.get_new_replay_name()
+    replay_name = replays.capture_new_replay()
 
     response = redirect(url_for(replay.__name__, replay=replay_name))
     response.headers.add(
@@ -122,7 +121,9 @@ def delete_replay():
     if not replay or "/" in replay or ".." in replay:
         abort(400)
 
-    # TODO delete replay
+    removed = replays.remove_replay(replay)
+    if not removed:
+        abort(400)
 
     return redirect(url_for(home.__name__))
 

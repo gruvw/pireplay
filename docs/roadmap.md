@@ -1,5 +1,7 @@
 # PiReplay Roadmap
 
+## Features
+
 - [X] Set up Repository with good structure
 - [X] Python package `pireplay` poetry project + release CI to PyPI
 - [X] Design the basic website on Figma (+ implement feedback from UI/UX designers)
@@ -14,14 +16,19 @@
 - [X] Pass yaml configuration file to CLI program to override defaults
 - [X] Delete replay web server endpoint + UI
 - [X] Implement web page for settings
-- [ ] Configuration of RPI hotspot using python (CLI configure + reset)
+- [X] Implement the kept replays manager
 - [ ] Possible to keep internet connection via WiFi ? (dual mode otherwise, from config, choose between hotspot without internet or connect to Wi-Fi)
+    - Yes possible, tried it manually
+- [ ] Configuration of RPI hotspot using python (CLI configure + reset)
 - [ ] On the fly new WiFi network connection from local web server (list SSIDs and input password)
 - [ ] RPI camera module circular capture and video save on web button press (evaluate maximum capture time in-memory)
 - [ ] RPI camera module circular capture configuration of resolution + duration change on the fly (using settings endpoints)
-- [ ] CLI click documentation (proper `--help`)
 - [ ] 3D print case for the device
+
+## Documentation
+
 - [ ] 3D print documentation and DIY instructions on README
+- [ ] CLI click documentation (proper `--help`)
 - [ ] Document usage (user guide) on README (document saved replay location)
 - [ ] Document yaml config and link the default config as example on README
 - [ ] Document API usage for developers ("/capture" and "/raw-replay" + header and delete, integrate with another applications like streaming) on README
