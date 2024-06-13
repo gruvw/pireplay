@@ -11,16 +11,18 @@
 - [X] Implement web page for home page + replay
 - [X] Python config management module
 - [X] Override default config from web posts settings values routes
+- [X] Pass yaml configuration file to CLI program to override defaults
+- [ ] Delete replay web server endpoint + UI
 - [ ] Implement web page for settings
-- [ ] Pass yaml configuration file to CLI program to override defaults
-- [ ] Configuration of RPI hotspot using python (CLI configure + reset), possible to keep internet connection via WiFi ?
+- [ ] Configuration of RPI hotspot using python (CLI configure + reset)
+- [ ] Possible to keep internet connection via WiFi ? (dual mode otherwise, from config, choose between hotspot without internet or connect to Wi-Fi)
+- [ ] On the fly new WiFi network connection from local web server (list SSIDs and input password)
 - [ ] RPI camera module circular capture and video save on web button press (evaluate maximum capture time in-memory)
 - [ ] RPI camera module circular capture configuration of resolution + duration change on the fly (using settings endpoints)
 - [ ] CLI click documentation (proper `--help`)
 - [ ] 3D print case for the device
 - [ ] 3D print documentation and DIY instructions on README
-- [ ] On the fly new WiFi network connection from local web server (list SSIDs and input password)
 - [ ] Document usage (user guide) on README (document saved replay location)
 - [ ] Document yaml config and link the default config as example on README
-- [ ] Document API usage for developers ("/capture" and "/raw-replay" + header, integrate with another applications like streaming) on README
+- [ ] Document API usage for developers ("/capture" and "/raw-replay" + header and delete, integrate with another applications like streaming) on README
 - [ ] Document final result (pictures of hardware + UI) on README

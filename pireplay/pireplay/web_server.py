@@ -13,6 +13,7 @@ from flask import (
 from pireplay import replays
 from pireplay.consts import (
     VIDEO_EXT,
+    Form,
     Route,
     Template,
     Header,
@@ -34,6 +35,7 @@ def render_replay(replay=None):
         Template.replay if replay else Template.home,
         past_replays=replays.get_past_replays(),
         replay=replay,
+        delete_field=Form.delete_field,
     )
 
 
@@ -57,7 +59,14 @@ def raw_replay(replay):
 
 @server.route(Route.settings)
 def settings():
-    return render_template(Template.settings)
+    text = lambda options: [o[1] for o in options]
+
+    return render_template(
+        Template.settings,
+        capture_times=map(text, Option.capture_times),
+        camera_resolutions=map(text, Option.camera_resolutions),
+        option_field=Form.option_field,
+    )
 
 
 @server.route(Route.capture, methods=["POST"])
@@ -80,7 +89,7 @@ def settings_route(route, options):
         @server.route(route, methods=["POST"])
         @functools.wraps(func)
         def wrapper():
-            value = request.form[Option.form_field]
+            value = request.form.get(Form.option_field)
             valid, index = validate_config_option(options, value)
 
             if not valid:
@@ -101,6 +110,17 @@ def settings_capture_time(index):
 @settings_route(Route.settings_camera_resolution, Option.camera_resolutions)
 def settings_camera_resolution(index):
     update_config_field(Config.camera_resolution_index, index)
+
+
+@server.route(Route.delete_replay, methods=["POST"])
+def delete_replay():
+    replay = request.form.get(Form.delete_field)
+    if not replay or "/" in replay or ".." in replay:
+        abort(400)
+
+    # TODO delete replay
+
+    return redirect(url_for(home.__name__))
 
 
 @server.after_request

@@ -19,9 +19,15 @@ class Route:
     settings_capture_time = "/settings/capture-time"
     settings_camera_resolution = "/settings/camera-resolution"
 
+    # DELETE
+    delete_replay = "/delete-replay"
+
+
+class Header:
+    raw_replay = "Raw-Replay"
+
 
 class Option:
-    form_field = "index"
 
     _capture_times_values = [3, 5, 10, 20, 30, 60]
     capture_times = [(t, f"{t}s") for t in _capture_times_values]
@@ -32,10 +38,6 @@ class Option:
         (1, "2304 × 1296 56 FPS"),
         (2, "1536 × 864 120 FPS"),
     ]
-
-
-class Header:
-    raw_replay = "Raw-Replay"
 
 
 class Config:
@@ -52,3 +54,8 @@ class Config:
         (capture_time_index, Option.capture_times),
         (camera_resolution_index, Option.camera_resolutions),
     ]
+
+
+class Form:
+    option_field = "index"
+    delete_field = "replay"

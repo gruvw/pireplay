@@ -6,7 +6,7 @@
 
 <div class="actions">
   <a id="settings" href={{ url_for("settings") }}>Settings</a>
-  <form action={{ url_for("capture") }} method="post">
+  <form action={{ url_for("capture") }} method="POST">
     <button id="capture">CAPTURE</button>
   </form>
 </div>
@@ -21,9 +21,16 @@
     <div>
     {% for pr in past_replays %}
       {% if replay and replay == pr %}
-      <p class="past-replay current-replay">
+      <span class="past-replay current-replay">
         {{ pr }}
-      </p>
+        <form
+          id="delete-replay"
+          action={{ url_for("delete_replay", replay=pr) }}
+          method="POST"
+          onSubmit="return confirm('Do you want to delete this replay forever?');">
+          <nobr>(<button name="{{ delete_field }}" value="{{ replay }}">delete</button>)</nobr>
+        </form>
+      </span>
       {% else %}
       <a class="past-replay" href={{ url_for("replay", replay=pr) }}>
         {{ pr }}

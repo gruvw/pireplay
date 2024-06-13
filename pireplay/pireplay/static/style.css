@@ -32,6 +32,10 @@ p {
     text-align: center;
 }
 
+span {
+    font-size: var(--content);
+}
+
 header {
     border-bottom: 3px solid var(--white);
     padding: 12px 20px;
@@ -52,14 +56,14 @@ video {
     margin: 0px 20px;
 }
 
-.past-replay {
+.past-replay, #delete-replay {
     display: block;
     text-align: center;
     margin: 0px;
     color: var(--purple);
 }
 
-.current-replay {
+.current-replay, #delete-replay {
     color: var(--red);
 }
 
@@ -102,4 +106,8 @@ video {
     padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
+}
+
+#delete-replay {
+    display: inline;
 }
