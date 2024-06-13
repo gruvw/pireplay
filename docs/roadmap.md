@@ -12,8 +12,8 @@
 - [X] Python config management module
 - [X] Override default config from web posts settings values routes
 - [X] Pass yaml configuration file to CLI program to override defaults
-- [ ] Delete replay web server endpoint + UI
-- [ ] Implement web page for settings
+- [X] Delete replay web server endpoint + UI
+- [X] Implement web page for settings
 - [ ] Configuration of RPI hotspot using python (CLI configure + reset)
 - [ ] Possible to keep internet connection via WiFi ? (dual mode otherwise, from config, choose between hotspot without internet or connect to Wi-Fi)
 - [ ] On the fly new WiFi network connection from local web server (list SSIDs and input password)

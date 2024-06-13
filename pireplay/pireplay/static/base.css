@@ -7,11 +7,23 @@
     --yellow: #FCE566;
     --blue: #5AD4E6;
 
-    --intense: 2.5em;
-    --title: 2em;
-    --sub-title: 1.75em;
-    --section: 1.5em;
-    --content: 1.25em;
+    --intense: 2rem;
+    --title: 1.75rem;
+    --sub-title: 1.5rem;
+    --section: 1.25rem;
+    --content: 1rem;
+
+    --app-width: 800px;
+}
+
+@media (min-width:700px) {
+    :root {
+        --intense: 2.5rem;
+        --title: 2rem;
+        --sub-title: 1.75rem;
+        --section: 1.5rem;
+        --content: 1.25rem;
+    }
 }
 
 html[data-theme="light"] {

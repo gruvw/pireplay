@@ -1,9 +1,9 @@
 body {
     margin: 0px;
     padding: 0px;
-    font-size: 100%;
     background-color: var(--black);
     font-family: "Fira Code", monospace;
+    font-size: var(--content);
     color: var(--white);
 }
 
@@ -11,10 +11,33 @@ button {
     all: unset;
 }
 
+header, nav {
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    font-size: var(--section);
+}
+
+main {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: var(--app-width);
+}
+
+header {
+    border-bottom: 3px solid var(--white);
+}
+
+section {
+    text-align: center;
+}
+
 a {
     text-decoration: none;
     color: var(--white);
-    font-size: var(--content);
 }
 
 a:hover, button:hover {
@@ -22,32 +45,17 @@ a:hover, button:hover {
     cursor: pointer;
 }
 
-h2 {
-    font-size: var(--section);
-    text-align: center;
-}
-
-p {
-    font-size: var(--content);
-    text-align: center;
-}
-
-span {
-    font-size: var(--content);
-}
-
-header {
-    border-bottom: 3px solid var(--white);
-    padding: 12px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+nav a {
+    color: var(--red);
 }
 
 video {
     width: 100%;
     max-width: 720px;
+}
+
+span {
+    display: inline-block;
 }
 
 .video {
@@ -56,14 +64,14 @@ video {
     margin: 0px 20px;
 }
 
-.past-replay, #delete-replay {
+.past-replay {
     display: block;
     text-align: center;
     margin: 0px;
     color: var(--purple);
 }
 
-.current-replay, #delete-replay {
+.past-replay.selected {
     color: var(--red);
 }
 
@@ -81,6 +89,37 @@ video {
     width: min-content;
 }
 
+form.options {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0px 20px;
+    margin-bottom: 20px;
+}
+
+.option {
+    padding: 5px 10px;
+    border: 4px solid var(--yellow);
+    border-radius: 10px;
+    font-size: var(--sub-title);
+    color: var(--yellow);
+}
+
+.option.selected {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+.capture-time span {
+    width: 3ch;
+}
+
+.camera-resolution span {
+    width: 12ch;
+}
+
 #github {
     color: var(--green);
     font-size: var(--content);
@@ -96,6 +135,7 @@ video {
 
 #settings {
     color: var(--blue);
+    font-size: var(--section);
 }
 
 #capture {
@@ -110,4 +150,8 @@ video {
 
 #delete-replay {
     display: inline;
+}
+
+#current-page {
+    color: var(--blue);
 }

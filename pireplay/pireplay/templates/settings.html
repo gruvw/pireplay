@@ -1,9 +1,41 @@
 {% extends "base.html" %}
 
+{% import "components/nav.html" as nav %}
+
 {% block title %}Settings{% endblock %}
 
 {% block content %}
-<nav>
+{{ nav.nav("settings") }}
 
-</nav>
+<section>
+  <h2>Capture Time</h2>
+
+  <form class="options capture-time" action={{ url_for("settings_capture_time") }} method="POST">
+  {% for ct in capture_times %}
+    {% if loop.index0 == capture_time_index %}
+      <span class="option selected">{{ ct }}</span>
+    {% else %}
+      <button class="option" name="{{ option_field }}" value="{{ loop.index0 }}">
+        <span>{{ ct }}</span>
+      </button>
+    {% endif %}
+  {% endfor %}
+  </form>
+</section>
+
+<section>
+  <h2>Camera Resolution</h2>
+
+  <form class="options camera-resolution" action={{ url_for("settings_camera_resolution") }} method="POST">
+  {% for cr in camera_resolutions %}
+    {% if loop.index0 == camera_resolution_index %}
+      <span class="option selected">{{ cr }}</span>
+    {% else %}
+      <button class="option" name="{{ option_field }}" value="{{ loop.index0 }}">
+        <span>{{ cr }}</span>
+      </button>
+    {% endif %}
+  {% endfor %}
+  </form>
+</section>
 {% endblock %}

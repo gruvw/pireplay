@@ -59,12 +59,14 @@ def raw_replay(replay):
 
 @server.route(Route.settings)
 def settings():
-    text = lambda options: [o[1] for o in options]
+    texts = lambda options: [o[1] for o in options]
 
     return render_template(
         Template.settings,
-        capture_times=map(text, Option.capture_times),
-        camera_resolutions=map(text, Option.camera_resolutions),
+        capture_time_index=config(Config.capture_time_index),
+        camera_resolution_index=config(Config.camera_resolution_index),
+        capture_times=texts(Option.capture_times),
+        camera_resolutions=texts(Option.camera_resolutions),
         option_field=Form.option_field,
     )
 
@@ -105,11 +107,13 @@ def settings_route(route, options):
 @settings_route(Route.settings_capture_time, Option.capture_times)
 def settings_capture_time(index):
     update_config_field(Config.capture_time_index, index)
+    # TODO update the camera capture time (circular stream buffer)
 
 
 @settings_route(Route.settings_camera_resolution, Option.camera_resolutions)
 def settings_camera_resolution(index):
     update_config_field(Config.camera_resolution_index, index)
+    # TODO update the camera resolution
 
 
 @server.route(Route.delete_replay, methods=["POST"])
@@ -126,6 +130,11 @@ def delete_replay():
 @server.after_request
 def response_minify(response):
     if "text/html" in response.content_type:
-        response.set_data(minify(response.get_data(as_text=True)))
+        minified = minify(
+            response.get_data(as_text=True),
+            minify_js=True,
+            minify_css=True,
+        )
+        response.set_data(minified)
 
     return response

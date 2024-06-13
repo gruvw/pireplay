@@ -21,7 +21,7 @@
     <div>
     {% for pr in past_replays %}
       {% if replay and replay == pr %}
-      <span class="past-replay current-replay">
+      <span class="past-replay selected">
         {{ pr }}
         <form
           id="delete-replay"

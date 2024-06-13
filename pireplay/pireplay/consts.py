@@ -34,9 +34,9 @@ class Option:
 
     # TODO use real camera recording options
     camera_resolutions = [
-        (0, "2304 × 1296 30 FPS HDR"),
-        (1, "2304 × 1296 56 FPS"),
-        (2, "1536 × 864 120 FPS"),
+        (0, "2304 × 1296, 30 FPS HDR"),
+        (1, "2304 × 1296, 56 FPS"),
+        (2, "1536 × 864, 120 FPS"),
     ]
 
 
