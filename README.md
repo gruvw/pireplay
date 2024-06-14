@@ -1,17 +1,17 @@
 # PiReplay
 
-Capture and instantly replay the last moments using a Raspberry Pi and a camera with a web application.
+Capture and instantly replay the last moments by using a web application controlling a [Raspberry Pi](https://www.raspberrypi.com) with a camera.
 
 Take a look at the project's [roadmap](docs/roadmap.md) to see upcoming features (and all the work accomplished).
 
-**Note**: check out the `pireplay` python package (CLI) on PyPI <https://pypi.org/project/pireplay>.
+**Note**: check out the `pireplay` [Python](https://www.python.org) package (CLI) on PyPI <https://pypi.org/project/pireplay>.
 
 ## Project Structure
 
 A short description of the project's structure for quick reference:
 
 - `cad`: for 3D models files, 3D printing
-- `pireplay`: the source code of the [Python](https://www.python.org/) `pireplay` package (using [Poetry](https://python-poetry.org/))
+- `pireplay`: the source code of the Python `pireplay` package (using [Poetry](https://python-poetry.org/))
 
 ## Do It Yourself
 

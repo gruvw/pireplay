@@ -1,8 +1,8 @@
 # PiReplay
 
-Python Package `pireplay` CLI (managed using [Poetry](https://python-poetry.org/))
+Capture and instantly replay the last moments by using a web application controlling a [Raspberry Pi](https://www.raspberrypi.com) with a camera.
 
-Capture and instantly replay the last moments using a Raspberry Pi and a camera with a web application.
+Python Package `pireplay` CLI (managed using [Poetry](https://python-poetry.org/))
 
 **Note**: please take a look at the project's GitHub repository **<https://github.com/gruvw/pireplay>**
 
