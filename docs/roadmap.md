@@ -17,10 +17,9 @@
 - [X] Delete replay web server endpoint + UI
 - [X] Implement web page for settings
 - [X] Implement the kept replays manager
-- [ ] Possible to keep internet connection via WiFi ? (dual mode otherwise, from config, choose between hotspot without internet or connect to Wi-Fi)
-    - Yes possible, tried it manually
-- [ ] Configuration of RPI hotspot using python (CLI configure + reset)
-- [ ] On the fly new WiFi network connection from local web server (list SSIDs and input password)
+- [ ] Configuration of RPI hotspot using python (separated from this project, see <https://github.com/gruvw/nmwifi>)
+- [ ] On the fly new Wi-Fi network connection from local web server (list SSIDs and input password)
+- [ ] Physical Wi-Fi reset button on RPI to force hotspot configuration (set dummy ssid and password on wifi connection)
 - [ ] RPI camera module circular capture and video save on web button press (evaluate maximum capture time in-memory)
 - [ ] RPI camera module circular capture configuration of resolution + duration change on the fly (using settings endpoints)
 - [ ] 3D print case for the device

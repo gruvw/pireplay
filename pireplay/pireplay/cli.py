@@ -1,10 +1,8 @@
 import click
+import logging
 
 from pireplay.config import safe_update_config_from_string
 from pireplay.web_server import server
-
-
-config_option = click.option("-c", "--config", type=click.File("r"))
 
 
 @click.group()
@@ -13,12 +11,19 @@ def cli():
 
 
 @cli.command()
-@config_option
-def serve(config):
+@click.option("-c", "--config", type=click.File("r"))
+@click.option("--debug", is_flag=True)
+def run(config, debug):
+    print("Starting PiReplay Server")
+
     if config:
         safe_update_config_from_string(config.read())
 
-    # TODO network config
+    if not debug:
+        # TODO network config
 
-    # FIXME remove debug
-    server.run(debug=True, host="0.0.0.0", port=80)
+        werkzeug_log = logging.getLogger("werkzeug")
+        werkzeug_log.disabled = True
+        click.secho = click.echo = lambda *_, **__: None
+
+    server.run(debug=debug, host="0.0.0.0", port=80)

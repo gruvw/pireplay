@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pireplay"
-version = "0.0.2"
+version = "0.0.3"
 description = "Capture and instantly replay the last moments using a Raspberry Pi and a camera with a web application."
 authors = ["gruvw <gruvw.dev@gmail.com>"]
 readme = "README.md"
@@ -20,7 +20,7 @@ pyyaml = "^6.0.1"
 pireplay = "pireplay.cli:cli"
 
 # Install in dev: `sudo /root/.local/bin/poetry install`
-# Run in dev: `sudo /root/.local/bin/poetry run pireplay serve`
+# Run in dev: `sudo /root/.local/bin/poetry run pireplay run`
 
 # Find process using port 80: `sudo lsof -i tcp:80`
 

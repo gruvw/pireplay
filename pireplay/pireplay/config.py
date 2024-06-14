@@ -60,6 +60,7 @@ def config(key):
     value = _config[key]
 
     if key == Config.replays_location:
+        # TODO check sudo -E + document on README (install then simlink executable)
         username = os.environ.get("SUDO_USER", os.environ.get("USERNAME"))
         value = os.path.expanduser(value.replace("~", "~" + username))
         if not os.path.exists(value):

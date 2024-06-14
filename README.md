@@ -4,7 +4,7 @@ Capture and instantly replay the last moments using a Raspberry Pi and a camera 
 
 Take a look at the project's [roadmap](docs/roadmap.md) to see upcoming features (and all the work accomplished).
 
-**Note**: check out the `pireplay` python package (CLI) on PyPI <https://pypi.org/project/pireplay/>.
+**Note**: check out the `pireplay` python package (CLI) on PyPI <https://pypi.org/project/pireplay>.
 
 ## Project Structure
 
@@ -35,7 +35,7 @@ Here are the instructions (tutorial) for setting up a fully working **PiReplay**
     4. _Next_ > Edit Settings (additional configuration)
         - General > Set hostname: `pireplay.local`
         - General > Set username and **password**: `pireplay` (use a safe password)
-        - General > Configure wireless LAN: use your current Wi-Fi network credentials (for setup purposes, we will use a Wi-Fi Hotspot later).
+        - General > Configure wireless LAN: use your current Wi-Fi network credentials (only for setup purposes, we will use a Wi-Fi Hotspot configuration later).
         - Services > Enable SSH (using password authentication)
     5. Flash the SD card and wait till it completes
 3. Insert the SD card inside the Raspberry Pi and power it using the micro USB cable (wait a few seconds)
@@ -53,6 +53,11 @@ Once connected to the Raspberry Pi via SSH, you can install and set up the `pire
 <!-- TODO document PiReplay software install + setup -->
 
 INSTRUCTIONS NOT FINISHED
+
+### Troubleshoot
+
+If you run into network problems on you device, you might want to use SSH over USB to fix them.
+Follow this tutorial to enable SSH over USB: <https://gist.github.com/etoxin/d96418f0732c0de36f0f3c22f9bdd75d>.
 
 ## Contributions
 

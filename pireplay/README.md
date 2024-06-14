@@ -8,5 +8,5 @@ Capture and instantly replay the last moments using a Raspberry Pi and a camera 
 
 ## Installation
 
-- Install by running: `pip install pireplay`
+- Install by running: `sudo pip install pireplay`
 - CLI Usage: `pireplay --help`
