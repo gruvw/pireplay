@@ -191,6 +191,20 @@ files = [
 ]
 
 [[package]]
+name = "nmwifi"
+version = "0.0.2"
+description = "Python API (and CLI) to configure a Wi-Fi device through NetworkManager using a fallback Access Point."
+optional = false
+python-versions = "<4.0,>=3.10"
+files = [
+    {file = "nmwifi-0.0.2-py3-none-any.whl", hash = "sha256:f8dfbce59db3d29759de0235fe2a7b2d7f56479f3a7408b2052311e8739d944f"},
+    {file = "nmwifi-0.0.2.tar.gz", hash = "sha256:18416f854bf43cc22886b9eb4003aa310a3d5e8f8c686f11f883d3fb93e87c5b"},
+]
+
+[package.dependencies]
+click = ">=8.1.7,<9.0.0"
+
+[[package]]
 name = "pyyaml"
 version = "6.0.1"
 description = "YAML parser and emitter for Python"
@@ -270,4 +284,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "7fd1866d3bcbf0c5aaacf10a825b7c2039215f02e0aaf4d7ad830ead4168a2b4"
+content-hash = "ed551ad00ff2e944e953de835bf56007c7f75d0e5d66a3e2cb012a20b08102ad"

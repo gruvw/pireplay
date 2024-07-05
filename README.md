@@ -4,14 +4,14 @@ Capture and instantly replay the last moments by using a web application control
 
 Take a look at the project's [roadmap](docs/roadmap.md) to see upcoming features (and all the work accomplished).
 
-**Note**: check out the `pireplay` [Python](https://www.python.org) package (CLI) on PyPI <https://pypi.org/project/pireplay>.
+**Note** - Check out the `pireplay` [Python](https://www.python.org) package (CLI) on PyPI: <https://pypi.org/project/pireplay> (managed using [Poetry](https://python-poetry.org/)).
 
 ## Project Structure
 
 A short description of the project's structure for quick reference:
 
 - `cad`: for 3D models files, 3D printing
-- `pireplay`: the source code of the Python `pireplay` package (using [Poetry](https://python-poetry.org/))
+- `pireplay`: the source code of the Python `pireplay` package
 
 ## Do It Yourself
 
@@ -67,7 +67,7 @@ Before opening a new PR, make sure to open an issue to discuss it beforehand (fi
 
 ## Powered by
 
-This project would not be possible without the incredible technologies below:
+This project would not be possible without the wonderful technologies below:
 
 * [Python](https://www.python.org/)
 * [Flask](https://github.com/pallets/flask/)

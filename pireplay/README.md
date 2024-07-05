@@ -9,4 +9,5 @@ Python Package `pireplay` CLI (managed using [Poetry](https://python-poetry.org/
 ## Installation
 
 - Install by running: `sudo pip install pireplay`
+<!-- TODO sudo -E and simlink -->
 - CLI Usage: `pireplay --help`

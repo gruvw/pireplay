@@ -48,7 +48,12 @@ class Config:
     replays_location = "replays_location"
     replay_name = "replay_name"
 
-    # TODO wifi hotspot SSID and password
+    network_interface = "network_interface"
+
+    wifi_ssid = "wifi_ssid"
+    wifi_password = "wifi_password"
+    ap_ssid_prefix = "ap_ssid_prefix"
+    ap_password = "ap_password"
 
     config_options = [
         (capture_time_index, Option.capture_times),
