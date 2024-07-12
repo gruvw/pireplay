@@ -45,7 +45,9 @@ class Config:
     capture_time_index = "capture_time_index"
     camera_resolution_index = "camera_resolution_index"
     kept_replays = "kept_replays"
+    directory = "directory"
     replays_location = "replays_location"
+    config_location = "config_location"
     replay_name = "replay_name"
 
     network_interface = "network_interface"

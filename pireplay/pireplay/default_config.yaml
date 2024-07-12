@@ -23,8 +23,8 @@ camera_resolution_index: 1
 # minimum 1, maximum 500 (check SD card storage)
 kept_replays: 25
 
-# Location where the replays are kept on disk
-replays_location: "~/pireplay/replays/"
+# Location where the replays are kept on disk (working directory for PiReplay)
+directory: "~/pireplay"
 
 # Name given to a new replay (without the file extension)
 # must be unique, or it will override the file with the same name
