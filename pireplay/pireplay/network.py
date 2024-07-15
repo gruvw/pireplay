@@ -29,3 +29,7 @@ def refresh_cached_ssids():
     nmwifi.clean()
     cached_ssids = nmwifi.available_networks(config(Config.network_interface))
     setup_network()
+
+
+def connected_to():
+    return nmwifi.is_wifi_active() and config(Config.wifi_ssid)

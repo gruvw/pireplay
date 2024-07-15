@@ -5,6 +5,7 @@ class Template:
     home = "index.html"
     replay = "replay.html"
     settings = "settings.html"
+    network = "network.html"
 
 
 class Route:
@@ -13,11 +14,14 @@ class Route:
     replay = "/replay/<string:replay>"
     raw_replay = f"/raw-replay/<string:replay>{VIDEO_EXT}"
     settings = "/settings"
+    network = "/network"
 
     # POST
     capture = "/capture"
     settings_capture_time = "/settings/capture-time"
     settings_camera_resolution = "/settings/camera-resolution"
+    refresh_network = "/network/refresh"
+    register_network = "/network/register"
 
     # DELETE
     delete_replay = "/delete-replay"
@@ -66,3 +70,6 @@ class Config:
 class Form:
     option_field = "index"
     delete_field = "replay"
+
+    wifi_ssid = "ssid"
+    wifi_password = "password"

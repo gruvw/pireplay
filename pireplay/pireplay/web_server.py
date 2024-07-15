@@ -7,7 +7,7 @@ from flask import (
     url_for,
     send_from_directory,
     request,
-    abort
+    abort,
 )
 
 from pireplay import replays
@@ -17,13 +17,18 @@ from pireplay.consts import (
     Route,
     Template,
     Header,
-    Option
+    Option,
 )
 from pireplay.config import (
     Config,
     config,
     update_config_field,
-    validate_config_option
+    validate_config_option,
+)
+from pireplay.network import (
+    connected_to,
+    cached_ssids,
+    refresh_cached_ssids,
 )
 
 
@@ -123,6 +128,38 @@ def delete_replay():
 
     removed = replays.remove_replay(replay)
     if not removed:
+        abort(400)
+
+    return redirect(url_for(home.__name__))
+
+
+@server.route(Route.network)
+def network():
+    return render_template(
+        Template.network,
+        connected=connected_to(),
+        networks=cached_ssids,
+    )
+
+
+@server.route(Route.refresh_network, methods=["POST"])
+def refresh_networks():
+    refresh_cached_ssids()
+
+    return redirect(url_for(network.__name__))
+
+
+@server.route(Route.register_network, methods=["POST"])
+def register_network():
+    try:
+        ssid = request.form.get(Form.wifi_ssid)
+        password = request.form.get(Form.wifi_password)
+
+        update_config_field(Config.wifi_ssid, ssid)
+        update_config_field(Config.wifi_password, password)
+
+        refresh_cached_ssids()
+    except:
         abort(400)
 
     return redirect(url_for(home.__name__))
