@@ -17,12 +17,12 @@ def cli():
 @click.option("-c", "--config", type=click.File("r"))
 @click.option("--debug", is_flag=True)
 def run(config, debug):
+    print("Starting PiReplay server...")
+
     if not debug:
         werkzeug_log = logging.getLogger("werkzeug")
         werkzeug_log.disabled = True
         click.secho = click.echo = lambda *_, **__: None
-
-    print("Starting PiReplay server")
 
     config_content = config.read() if config else None
     # do it once first to get the correct "directory" element
@@ -40,5 +40,7 @@ def run(config, debug):
         safe_update_config_from_string(config_content)
 
     refresh_cached_ssids()
+
+    print("PiReplay server started :)")
 
     server.run(debug=debug, host="0.0.0.0", port=80)

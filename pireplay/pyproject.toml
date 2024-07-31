@@ -21,7 +21,7 @@ nmwifi = "^0.0.3"
 pireplay = "pireplay.cli:cli"
 
 # Install in dev: `sudo /root/.local/bin/poetry install`
-# Run in dev: `sudo -E /root/.local/bin/poetry run pireplay run`
+# Run in dev: `sudo -E /root/.local/bin/poetry run pireplay run --debug`
 
 # Find process using port 80: `sudo lsof -i tcp:80`
 
