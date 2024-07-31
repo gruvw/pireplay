@@ -8,30 +8,40 @@
 {{ nav.nav("network") }}
 
 <section>
-  <h2>Networks</h2>
-
   {% if connected %}
-    <div>
-      connected
-      <form
-        class="ap"
-        action={{ url_for("register_network") }}
-        method="POST">
-        Disconnect (AP mode)
-      </form>
-    </div>
+  <div>
+    connected
+    <form
+      class="ap"
+      action={{ url_for("register_network") }}
+      method="POST">
+      Disconnect (AP mode)
+    </form>
+  </div>
+  {% else %}
+  <div>
+    Currently not connected to Wi-Fi (AP mode).
+  </div>
   {% endif %}
 
+  <h2>Networks</h2>
+
+  <form
+    class="refresh_networks"
+    action={{ url_for("refresh_networks") }}
+    method="POST">
+    <button>Refresh</button>
+  </form>
 
   {% if networks | length > 0 %}
     <div>
     {% for n in networks %}
-        <form
-          class="network"
-          action={{ url_for("register_network") }}
-          method="POST">
-          {{ n }}
-        </form>
+      <form
+        class="network"
+        action={{ url_for("register_network") }}
+        method="POST">
+        {{ n }}
+      </form>
     {% endfor %}
     </div>
   {% else %}

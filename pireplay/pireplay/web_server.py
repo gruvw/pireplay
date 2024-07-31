@@ -135,8 +135,7 @@ def delete_replay():
 
 @server.route(Route.network)
 def network():
-    print("HEY")
-    print(connected_to())
+    print(cached_ssids)
     return render_template(
         Template.network,
         connected=connected_to(),

@@ -1,7 +1,11 @@
+import time
+
 import nmwifi
 from pireplay.config import Config, config
 
 
+# FIXME make this not global
+# global near SSIDs cache
 cached_ssids = []
 
 
@@ -24,10 +28,15 @@ def setup_network():
 
 
 def refresh_cached_ssids():
-    global cached_ssids
-
     nmwifi.clean()
-    cached_ssids = nmwifi.available_networks(config(Config.network_interface))
+
+    time.sleep(5) # wait successful disconnect before rescan
+
+    cached_ssids.clear()
+    cached_ssids.extend(
+        nmwifi.available_networks(config(Config.network_interface))
+    )
+
     setup_network()
 
 
