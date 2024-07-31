@@ -16,10 +16,10 @@ def get_ap_ssid():
 def setup_network():
     nmwifi.setup(
         config(Config.network_interface),
-        config(Config.wifi_ssid),
-        config(Config.wifi_password),
-        get_ap_ssid(),
-        config(Config.ap_password),
+        config(Config.wifi_ssid) or None,
+        config(Config.wifi_password) or None,
+        get_ap_ssid() or None,
+        config(Config.ap_password) or None,
     )
 
 

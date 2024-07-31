@@ -7,6 +7,36 @@
 {% block content %}
 {{ nav.nav("network") }}
 
-<!-- TODO network page -->
+<section>
+  <h2>Networks</h2>
+
+  {% if connected %}
+    <div>
+      connected
+      <form
+        class="ap"
+        action={{ url_for("register_network") }}
+        method="POST">
+        Disconnect (AP mode)
+      </form>
+    </div>
+  {% endif %}
+
+
+  {% if networks | length > 0 %}
+    <div>
+    {% for n in networks %}
+        <form
+          class="network"
+          action={{ url_for("register_network") }}
+          method="POST">
+          {{ n }}
+        </form>
+    {% endfor %}
+    </div>
+  {% else %}
+    <p>No Wi-Fi networks in range...</p>
+  {% endif %}
+</section>
 
 {% endblock %}
