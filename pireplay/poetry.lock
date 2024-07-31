@@ -192,13 +192,13 @@ files = [
 
 [[package]]
 name = "nmwifi"
-version = "0.0.2"
+version = "0.0.3"
 description = "Python API (and CLI) to configure a Wi-Fi device through NetworkManager using a fallback Access Point."
 optional = false
 python-versions = "<4.0,>=3.10"
 files = [
-    {file = "nmwifi-0.0.2-py3-none-any.whl", hash = "sha256:f8dfbce59db3d29759de0235fe2a7b2d7f56479f3a7408b2052311e8739d944f"},
-    {file = "nmwifi-0.0.2.tar.gz", hash = "sha256:18416f854bf43cc22886b9eb4003aa310a3d5e8f8c686f11f883d3fb93e87c5b"},
+    {file = "nmwifi-0.0.3-py3-none-any.whl", hash = "sha256:ce13600db2f2b93ba9656d00c78f24ba0200ec85014c2cc3e522ce4fd1222600"},
+    {file = "nmwifi-0.0.3.tar.gz", hash = "sha256:8c3ecbff4c08f25383855352885a52a7806903accbbf3e3c6e73b2dc82865d5a"},
 ]
 
 [package.dependencies]
@@ -284,4 +284,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "ed551ad00ff2e944e953de835bf56007c7f75d0e5d66a3e2cb012a20b08102ad"
+content-hash = "75d7e5367198c0e9a1f1365958a4af130f98de1552f57bdc5fd807dbea833b0b"

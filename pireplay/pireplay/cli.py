@@ -2,6 +2,7 @@ import click
 import logging
 
 from pireplay.config import safe_update_config_from_string
+from pireplay.config import config as config_func
 from pireplay.consts import Config
 from pireplay.web_server import server
 from pireplay.network import refresh_cached_ssids
@@ -23,17 +24,20 @@ def run(config, debug):
 
     print("Starting PiReplay server")
 
+    config_content = config.read() if config else None
     # do it once first to get the correct "directory" element
     if config:
         safe_update_config_from_string(config.read())
 
     # get the current config from PiReplay directory
-    with open(config(Config.config_location), "r") as file:
+    # overrides the passed directory
+    with open(config_func(Config.config_location), "a+") as file:
+        file.seek(0)
         safe_update_config_from_string(file.read())
 
     # do it a second time to override current config with argument passed one
-    if config:
-        safe_update_config_from_string(config.read())
+    if config_content:
+        safe_update_config_from_string(config_content)
 
     refresh_cached_ssids()
 

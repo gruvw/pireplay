@@ -15,6 +15,9 @@ _config = copy.deepcopy(_default_config)
 
 
 def update_config(new_config):
+    if not new_config:
+        return
+
     _config.update(copy.deepcopy(new_config))
 
     with open(config(Config.config_location), "w") as file:

@@ -15,13 +15,13 @@ flask = "^3.0.3"
 click = "^8.1.7"
 minify-html = "^0.15.0"
 pyyaml = "^6.0.1"
-nmwifi = "^0.0.2"
+nmwifi = "^0.0.3"
 
 [tool.poetry.scripts]
 pireplay = "pireplay.cli:cli"
 
 # Install in dev: `sudo /root/.local/bin/poetry install`
-# Run in dev: `sudo /root/.local/bin/poetry run pireplay run`
+# Run in dev: `sudo -E /root/.local/bin/poetry run pireplay run`
 
 # Find process using port 80: `sudo lsof -i tcp:80`
 
