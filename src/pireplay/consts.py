@@ -33,7 +33,7 @@ class Header:
 
 class Option:
 
-    capture_times_values = [3, 5, 10, 20, 30, 60]
+    capture_times_values = [3, 5, 7, 10, 20, 30]
     capture_times = [(t, f"{t}s") for t in capture_times_values]
 
     camera_resolutions = [

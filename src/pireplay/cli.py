@@ -6,7 +6,7 @@ from pireplay.config import config as config_func
 from pireplay.consts import Config
 from pireplay.web_server import server
 from pireplay.network import refresh_cached_ssids
-from pireplay.camera import setup_camera, start_recording
+from pireplay.camera import setup_camera
 
 
 @click.group()
@@ -44,7 +44,6 @@ def run(config, debug):
 
     if not debug:
         setup_camera()
-        start_recording()
 
     print("PiReplay server started :)")
 

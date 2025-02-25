@@ -27,7 +27,7 @@ directory: "~/pireplay"
 # Name given to a new replay (without the file extension)
 # must be unique, or it will override the file with the same name
 # support `strftime` strings, see https://strftime.org/ or `man strftime 3`
-replay_name: "%Y_%m_%d - %H:%M:%S"
+replay_name: "%Y_%m_%d-%H:%M:%S"
 
 # Wi-Fi network interface
 network_interface: "wlan0"
@@ -38,4 +38,4 @@ wifi_password: "my_wifi_password"
 
 # Network configuration for the Access Point configuration (optional)
 ap_ssid_prefix: "PiReplay"
-ap_password: "pirelpay"
+ap_password: "pireplay42"

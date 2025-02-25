@@ -55,8 +55,14 @@ Once connected to the Raspberry Pi via SSH, you can install and set up the `pire
 sudo apt update
 sudo apt upgrade -y
 sudo rpi-update
+
+sudo apt install -y python3-picamera2 --no-install-recommends
 sudo apt install -y ffmpeg
+
+sudo apt install -y python3-pip
 ```
+<!-- use sudo -H -E --break-system-packages to install -->
+<!-- or maybe just sudo with break system -->
 
 (you might need to accept some installs if prompted)
 
@@ -80,3 +86,4 @@ This project would not be possible without the wonderful technologies below:
 * [Python](https://www.python.org/)
 * [Flask](https://github.com/pallets/flask/)
 * [Raspberry Pi](https://www.raspberrypi.com/)
+* [picamera2](https://github.com/raspberrypi/picamera2)
