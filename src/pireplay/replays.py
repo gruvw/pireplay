@@ -2,7 +2,8 @@ import os
 from datetime import datetime
 
 from pireplay.config import Config, config
-from pireplay.consts import VIDEO_EXT
+from pireplay.consts import VIDEO_EXT, Option
+from pireplay.camera import save_recording
 
 
 def capture_new_replay():
@@ -21,11 +22,9 @@ def capture_new_replay():
     # save new replay
     replay_name = datetime.now().strftime(config(Config.replay_name))
     replay_path = os.path.join(replays_location, replay_name + VIDEO_EXT)
+    replay_length = Option.capture_times_values[int(config(Config.capture_time_index))]
 
-    # TODO get video file from camera and write it
-
-    with open(replay_path, "w") as file:
-        file.write("")
+    save_recording(replay_path, replay_length)
 
     return replay_name
 

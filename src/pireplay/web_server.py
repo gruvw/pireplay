@@ -111,13 +111,12 @@ def settings_route(route, options):
 @settings_route(Route.settings_capture_time, Option.capture_times)
 def settings_capture_time(index):
     update_config_field(Config.capture_time_index, index)
-    # TODO update the camera capture time (circular stream buffer)
 
 
 @settings_route(Route.settings_camera_resolution, Option.camera_resolutions)
 def settings_camera_resolution(index):
     update_config_field(Config.camera_resolution_index, index)
-    # TODO update the camera resolution
+    # TODO update the camera resolution (re-setup)
 
 
 @server.route(Route.delete_replay, methods=["POST"])

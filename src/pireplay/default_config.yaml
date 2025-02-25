@@ -1,6 +1,4 @@
 ---
-# TODO udate indexed options documentation with final values
-
 # Default number of seconds to record on capture, index in the list of options
 # (RPI in-memory circular buffer)
 # Options:

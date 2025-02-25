@@ -33,15 +33,20 @@ class Header:
 
 class Option:
 
-    _capture_times_values = [3, 5, 10, 20, 30, 60]
-    capture_times = [(t, f"{t}s") for t in _capture_times_values]
+    capture_times_values = [3, 5, 10, 20, 30, 60]
+    capture_times = [(t, f"{t}s") for t in capture_times_values]
 
-    # TODO use real camera recording options
     camera_resolutions = [
         (0, "2304 × 1296, 30 FPS HDR"),
         (1, "2304 × 1296, 56 FPS"),
         (2, "1536 × 864, 120 FPS"),
     ]
+
+
+class Camera:
+    FPS = 60
+    BUFFER_LEN = max(Option.capture_times_values)
+    TMP_DIR = "/var/tmp/"
 
 
 class Config:
