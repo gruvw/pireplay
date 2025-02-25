@@ -16,6 +16,7 @@ click = "^8.1.7"
 minify-html = "^0.15.0"
 pyyaml = "^6.0.1"
 nmwifi = "^0.0.3"
+picamera2 = "^0.3.25"
 
 [tool.poetry.scripts]
 pireplay = "pireplay.cli:cli"

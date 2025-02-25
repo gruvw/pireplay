@@ -11,7 +11,7 @@ Take a look at the project's [roadmap](docs/roadmap.md) to see upcoming features
 A short description of the project's structure for quick reference:
 
 - `cad`: for 3D models files, 3D printing
-- `pireplay`: the source code of the Python `pireplay` package
+- `src`: the source code of the Python `pireplay` package
 
 ## Do It Yourself
 
@@ -51,6 +51,14 @@ You are now connected via SSH to your brand new Raspberry Pi Zero.
 Once connected to the Raspberry Pi via SSH, you can install and set up the `pireplay` software to run on it.
 
 <!-- TODO document PiReplay software install + setup -->
+```sh
+sudo apt update
+sudo apt upgrade -y
+sudo rpi-update
+sudo apt install -y ffmpeg
+```
+
+(you might need to accept some installs if prompted)
 
 INSTRUCTIONS NOT FINISHED
 

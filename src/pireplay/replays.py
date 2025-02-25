@@ -14,7 +14,7 @@ def capture_new_replay():
         if os.path.isfile(path := os.path.join(replays_location, f)) and
         f.endswith(VIDEO_EXT)
     ]
-    if len(kept_replays) >= config(Config.kept_replays):
+    if len(kept_replays) >= int(config(Config.kept_replays)):
         oldest_replay = min(kept_replays, key=os.path.getctime)
         os.remove(oldest_replay)
 
