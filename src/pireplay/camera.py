@@ -7,7 +7,7 @@ from picamera2.outputs import CircularOutput
 from pireplay.consts import Camera
 
 
-_ENCODER = H264Encoder(10 * 1000000, iperiod=Camera.FPS)
+_ENCODER = H264Encoder(4 * 1000000, iperiod=Camera.FPS)
 _cam, _output = None, None
 
 
@@ -25,14 +25,12 @@ def setup_camera():
 
     _cam = Picamera2()
 
-    mode0 = _cam.sensor_modes[0]
     video_config = _cam.create_video_configuration(
-        main={"size": mode0["size"]},
-        controls={"FrameRate": Camera.FPS}
+        main={"size": (1280, 720)},
+        controls={"FrameRate": Camera.FPS, "AfMode": 2}
     )
     _cam.configure(video_config)
-    _cam.set_controls({"FrameRate": Camera.FPS})
-    _cam.set_controls({"AfMode": 2})
+
     _cam.start_preview(Preview.NULL)
 
     _output = CircularOutput(buffersize=Camera.BUFFER_LEN*Camera.FPS)

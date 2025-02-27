@@ -32,6 +32,8 @@ from pireplay.network import (
 )
 
 
+# TODO delete all replays endpoint with button in ui
+
 server = Flask(__name__)
 
 

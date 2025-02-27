@@ -23,6 +23,8 @@
 - [ ] RPI camera module circular capture and video save on web button press (evaluate maximum capture time in-memory)
 - [ ] RPI camera module circular capture configuration of resolution + duration change on the fly (using settings endpoints)
 - [ ] Physical Wi-Fi reset button on RPI to force hotspot configuration (set dummy ssid and password on wifi connection)
+- [ ] Delete all stored replays button
+- [ ] Take a snapshot (picture) button
 
 ## Documentation
 

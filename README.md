@@ -64,6 +64,8 @@ sudo apt install -y python3-pip
 <!-- use sudo -H -E --break-system-packages to install -->
 <!-- or maybe just sudo with break system -->
 
+<!-- add to boot -->
+
 (you might need to accept some installs if prompted)
 
 INSTRUCTIONS NOT FINISHED
