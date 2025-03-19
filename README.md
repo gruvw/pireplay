@@ -1,10 +1,19 @@
 # PiReplay
 
-Capture and instantly replay the last moments by using a web application controlling a [Raspberry Pi](https://www.raspberrypi.com) with a camera.
+Capture and instantly replay the last moments from your phone/computer. 
+
+You can capture replays from the web application `pireplay.local` controlling a [Raspberry Pi](https://www.raspberrypi.com) with a camera.
 
 Take a look at the project's [roadmap](docs/roadmap.md) to see upcoming features (and all the work accomplished).
 
 **Note** - Check out the `pireplay` [Python](https://www.python.org) package (CLI) on PyPI: <https://pypi.org/project/pireplay> (managed using [Poetry](https://python-poetry.org/)).
+
+## User Guide
+
+1. Make sure you stand close to a running PiReplay device.
+2. Using your phone/computer, connect to the PiReplay Wi-Fi network, usually named `PiReplay-XXXX`.
+3. Using a web browser, navigate to the following URL `http://pireplay.local` or `http://10.42.0.1` (you might need to accept security warning).
+4. Congratulations, you can now use the Web interface to capture, watch and download live replays!
 
 ## Project Structure
 
@@ -19,14 +28,16 @@ Here are the instructions (tutorial) for setting up a fully working **PiReplay**
 
 ### Requirements
 
-- Raspberry Pi board (recommended board: `Raspberry Pi 5 4GB`)
-- Micro SD card 64 GB
+- Raspberry Pi board (recommended board: `Raspberry Pi 5 4GB` for pireplay, or `Raspberry Pi Zero 2 W` for pireplay mini)
+- Micro SD card (at least 64 GB)
 - Raspberry Pi Camera module 3 (regular 75° sensor)
 - CSI Camera FPC connector cable to Raspberry Pi (select the correct one depending on you Raspberry Pi board)
-- Raspberry Pi alimentation (Micro USB/USB type C)
+- Raspberry Pi alimentation (Micro USB/USB type C), make sure both the cable and alimentation provide sufficient voltage
 - PiReplay box (see below)
 
 #### PiReplay box
+
+You can 3D print the corresponding box for the PiReplay device.
 
 <!-- TODO -->
 
@@ -55,25 +66,24 @@ You are now connected via SSH to your newly setup Raspberry Pi for PiReplay.
 
 Once connected to the Raspberry Pi via SSH, you can install and set up the `pireplay` software to run on it.
 
-<!-- TODO document PiReplay software install + setup -->
 ```sh
 sudo apt update
 sudo apt upgrade -y
 sudo rpi-update
 
 sudo apt install -y python3-picamera2 --no-install-recommends
-sudo apt install -y ffmpeg
+sudo apt install -y ffmpeg python3-pip
 
-sudo apt install -y python3-pip
+sudo pip install pireplay --break-system-packages
+
+(crontab -l 2>/dev/null; echo "@reboot sudo pireplay run") | crontab -
+
+sudo reboot
 ```
-<!-- use sudo -H -E --break-system-packages to install -->
-<!-- or maybe just sudo with break system -->
 
-<!-- add to boot -->
+**Note** - You might need to accept some installs/updates if prompted.
 
-(you might need to accept some installs if prompted)
-
-INSTRUCTIONS NOT FINISHED
+Congratulations, you now have a working PiReplay!
 
 ### Troubleshoot
 

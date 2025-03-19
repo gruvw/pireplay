@@ -29,6 +29,7 @@
 - [ ] On the fly new Wi-Fi network connection from local web server (list SSIDs and input password)
 - [ ] Add a video cropping/zooming feature
 - [ ] Add audio with mic
+- [ ] Fix automatic workflow package publish (build dependency issues with libcap)
 
 ## Documentation
 

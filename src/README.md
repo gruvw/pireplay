@@ -8,8 +8,7 @@ Python Package `pireplay` CLI (managed using [Poetry](https://python-poetry.org/
 
 ## Installation
 
-- Install by running: `sudo pip install pireplay`
-<!-- TODO sudo -E and simlink -->
+- Install by running: `sudo pip install pireplay --break-system-packages`
 - CLI Usage: `pireplay --help`
 
 **Note**: this progam is only intended to run on a RaspberryPi using a camera module.
