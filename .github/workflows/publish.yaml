@@ -13,8 +13,8 @@ jobs:
 
       - name: Install system dependencies
         run: |
-          sudo apt update
-          sudo apt install -y libcap-dev
+          sudo apt update && sudo apt upgrade
+          sudo apt install -y libcap-dev python3-picamera2
 
       - name: Build and Publish to PyPI
         uses: JRubics/poetry-publish@v2.0
