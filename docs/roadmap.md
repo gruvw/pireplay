@@ -21,11 +21,12 @@
 - [X] Configuration of RPI hotspot using python (separated from this project, see <https://github.com/gruvw/nmwifi>)
 - [X] RPI camera module circular capture and video save on web button press
 - [X] RPI camera working autofocus
-- [ ] RPI camera module circular capture configuration of resolution + duration change on the fly (using settings endpoints)
-- [ ] On the fly new Wi-Fi network connection from local web server (list SSIDs and input password)
+- [X] RPI camera module circular capture configuration of duration change on the fly (using settings endpoints)
+- [ ] Use video MP4 with standard video encoding (send through applications)
 - [ ] Delete all stored replays button
 - [ ] Take a snapshot (picture) button
-- [ ] Make sure MP4 is standard video encoding (send through applications)
+- [ ] RPI camera module circular capture configuration of resolution
+- [ ] On the fly new Wi-Fi network connection from local web server (list SSIDs and input password)
 - [ ] Add a video cropping/zooming feature
 - [ ] Add audio with mic
 

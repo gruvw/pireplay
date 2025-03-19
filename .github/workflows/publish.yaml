@@ -11,6 +11,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Install system dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y libcap-dev
+
       - name: Build and Publish to PyPI
         uses: JRubics/poetry-publish@v2.0
         with:
