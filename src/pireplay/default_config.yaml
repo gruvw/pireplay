@@ -1,5 +1,5 @@
 ---
-# Default number of seconds to record on capture, index in the list of options
+# Default number of seconds to record on capture, as index in the list of options
 # (RPI in-memory circular buffer)
 # Options:
 #   0: 3 seconds
@@ -10,7 +10,7 @@
 #   5: 60 seconds
 capture_time_index: 1
 
-# Default resolution to use for the camera, index in the list of options
+# Default resolution to use for the camera, as index in the list of options
 # Options:
 #   0: 2304 × 1296 30 FPS HDR
 #   1: 2304 × 1296 56 FPS
@@ -19,7 +19,7 @@ camera_resolution_index: 1
 
 # Number of replays to keep on disk (if full, oldest is deleted)
 # minimum 1, maximum 500 (check SD card storage)
-kept_replays: 25
+kept_replays: 20
 
 # Location where the replays are kept on disk (working directory for PiReplay)
 directory: "~/pireplay"
