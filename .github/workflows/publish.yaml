@@ -14,7 +14,7 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt update && sudo apt upgrade
-          sudo apt install -y libcap-dev libcap2 build-essential
+          sudo apt install -y build-essential libcap-dev libcap2 python3-prctl
 
       - name: Build and Publish to PyPI
         uses: JRubics/poetry-publish@v2.0
