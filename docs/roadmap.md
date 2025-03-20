@@ -33,9 +33,9 @@
 
 ## Documentation
 
-- [ ] CLI click documentation (proper `--help`)
-- [ ] 3D print documentation and DIY instructions on README
-- [ ] Document usage (user guide) on README (document saved replay location)
+- [X] Document usage (user guide) on README
+- [X] 3D print documentation and DIY instructions on README
+- [ ] Document final result (pictures of hardware + UI) on README
 - [ ] Document yaml config and link the default config as example on README
 - [ ] Document API usage for developers ("/capture" and "/raw-replay" + header and delete, integrate with another applications like streaming) on README
-- [ ] Document final result (pictures of hardware + UI) on README
+- [ ] CLI click documentation (proper `--help`)
