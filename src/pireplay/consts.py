@@ -25,6 +25,7 @@ class Route:
 
     # DELETE
     delete_replay = "/delete-replay"
+    delete_all_replays = "/delete-all-replays"
 
 
 class Header:

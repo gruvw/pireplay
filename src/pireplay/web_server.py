@@ -129,7 +129,16 @@ def delete_replay():
 
     removed = replays.remove_replay(replay)
     if not removed:
-        abort(400)
+        abort(500)
+
+    return redirect(url_for(home.__name__))
+
+
+@server.route(Route.delete_all_replays, methods=["POST"])
+def delete_all_replays():
+    removed = replays.remove_all_replays()
+    if not removed:
+        abort(500)
 
     return redirect(url_for(home.__name__))
 

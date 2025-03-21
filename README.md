@@ -168,7 +168,8 @@ Main endpoints:
 - `/capture` (POST): triggers a replay capture, sends the raw replay URL in the `Raw-Replay` response header.
 - `/raw-replay/<replay_name>.mp4` (GET): access video file of a given replay.
 - `/settings/capture-time` (POST, form data `index` set to the index of capture time options, see configuration file): changes the replay duration.
-- `/delete-replay` (DELETE, form data `replay` set to `<replay_name>`): deletes a given replay.
+- `/delete-replay` (POST, form data `replay` set to `<replay_name>`): deletes a given replay.
+- `/delete-all-replays` (POST): deletes every replay.
 
 ### Troubleshooting
 

@@ -56,3 +56,17 @@ def remove_replay(replay):
     os.remove(path)
 
     return True
+
+
+def remove_all_replays():
+    replays_dir = config(Config.replays_location)
+
+    if not os.path.isdir(replays_dir):
+        return False
+
+    for filename in os.listdir(replays_dir):
+        if filename.endswith(VIDEO_EXT):
+            file_path = os.path.join(replays_dir, filename)
+            os.remove(file_path)
+
+    return True

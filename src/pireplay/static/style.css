@@ -156,3 +156,10 @@ form.options {
 #current-page {
     color: var(--blue);
 }
+
+#delete-all-replays {
+    display: block;
+    text-align: center;
+    margin: 15px 0 0 0;
+    color: var(--red);
+}

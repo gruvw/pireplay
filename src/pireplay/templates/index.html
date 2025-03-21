@@ -38,6 +38,13 @@
       {% endif %}
     {% endfor %}
     </div>
+    <form
+      id="delete-all-replays"
+      action={{ url_for("delete_all_replays") }}
+      method="POST"
+      onSubmit="return confirm('Do you want to delete every single replay forever?');">
+      <nobr>(<button name="{{ delete_field }}" value="{{ replay }}">delete all replays</button>)</nobr>
+    </form>
   {% else %}
     <p>No past replay...</p>
   {% endif %}
