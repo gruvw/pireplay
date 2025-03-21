@@ -40,6 +40,6 @@ wifi_password: "my_wifi_password"
 ap_ssid_prefix: "PiReplay"
 ap_password: "pireplay42"
 
-# Could set to true if when using a single PiReplay device (optional),
+# Could set to true when using a single PiReplay device (optional),
 # disables MAC address suffix on SSID
 ap_ssid_no_suffix: false

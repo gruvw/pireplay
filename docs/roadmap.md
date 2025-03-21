@@ -22,7 +22,7 @@
 - [X] RPI camera module circular capture and video save on web button press
 - [X] RPI camera working autofocus
 - [X] RPI camera module circular capture configuration of duration change on the fly (using settings endpoints)
-- [X] Add `app_ssid_no_suffix` configuration option
+- [X] Add `ap_ssid_no_suffix` configuration option
 - [ ] Use video MP4 with standard video encoding (send through applications)
 - [ ] Delete all stored replays button
 - [ ] Take a snapshot (picture) button
