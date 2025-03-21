@@ -12,9 +12,11 @@ cached_ssids = []
 def get_ap_ssid():
     mac = nmwifi.get_mac_address(config(Config.network_interface))
     mac = mac.replace(":", "")
-    suffix = mac[-4:]
+    mac_suffix = mac[-4:]
 
-    return config(Config.ap_ssid_prefix) + f"-{suffix}"
+    suffix = "" if config(Config.ap_ssid_no_suffix) else f"-{mac_suffix}"
+
+    return config(Config.ap_ssid_prefix) + suffix
 
 
 def setup_network():

@@ -64,6 +64,7 @@ class Config:
     wifi_ssid = "wifi_ssid"
     wifi_password = "wifi_password"
     ap_ssid_prefix = "ap_ssid_prefix"
+    ap_ssid_no_suffix = "ap_ssid_no_suffix"
     ap_password = "ap_password"
 
     config_options = [

@@ -140,7 +140,6 @@ After connecting to the Raspberry Pi via SSH, you can install and configure the 
 ```bash
 sudo apt update
 sudo apt upgrade -y
-sudo rpi-update
 
 sudo apt install -y python3-picamera2 --no-install-recommends
 sudo apt install -y ffmpeg python3-pip
@@ -152,13 +151,11 @@ sudo pip install pireplay --break-system-packages
 sudo reboot
 ```
 
-**Note** - You may need to accept installation prompts.
-
 Congratulations! Your PiReplay device is now fully functional.
 
 ### Configuration
 
-You can configure some options of the `pireplay` program by providing a [YAML](https://yaml.org/) configuration file to the CLI: `pireplay run --config ./path/to/config.yaml`.
+You can configure some options of the `pireplay` program by providing a [YAML](https://yaml.org/) configuration file to the CLI: `pireplay run --config /path/to/config.yaml`.
 
 Check the documented default config file as an example: [`./src/pireplay/default_config.yaml`](./src/pireplay/default_config.yaml).
 
@@ -176,7 +173,7 @@ Main endpoints:
 ### Troubleshooting
 
 If you encounter network issues on your device, you might want to use SSH over USB to fix them.
-Follow this tutorial to enable SSH over USB: <https://gist.github.com/etoxin/d96418f0732c0de36f0f3c22f9bdd75d>.
+Follow this tutorial to enable SSH over USB: <https://gist.github.com/gruvw/97da6d772d5248d8178822b03f6975fd>.
 
 ## Contributions
 
