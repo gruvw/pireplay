@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pireplay"
-version = "0.0.4"
+version = "0.1.0"
 description = "Capture and instantly replay the last moments by using a web application controlling a Raspberry Pi with a camera."
 authors = ["gruvw <gruvw.dev@gmail.com>"]
 readme = "README.md"
