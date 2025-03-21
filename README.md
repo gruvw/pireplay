@@ -32,7 +32,7 @@ Take a look at the project's [roadmap](docs/roadmap.md) to see upcoming features
 ## User Guide
 
 1. Make sure you stand close to a running PiReplay device.
-2. Using your phone or computer, connect to the PiReplay Wi-Fi network, usually named `PiReplay-XXXX`.
+2. Using your phone or computer, connect to the PiReplay Wi-Fi network, usually named `PiReplay-XXXX` (the default password is `pireplay42`).
 3. Open a web browser and navigate to the following URL `http://pireplay.local` or `http://10.42.0.1` (you might need to accept security warning).
 4. Congratulations, you can now use the Web interface to capture, watch and download live replays!
 

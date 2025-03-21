@@ -23,14 +23,14 @@
 - [X] RPI camera working autofocus
 - [X] RPI camera module circular capture configuration of duration change on the fly (using settings endpoints)
 - [X] Add `ap_ssid_no_suffix` configuration option
-- [ ] Use video MP4 with standard video encoding (send through applications)
+- [X] Use video MP4 with standard video encoding (send through applications)
 - [ ] Delete all stored replays button
 - [ ] Take a snapshot (picture) button
-- [ ] RPI camera module circular capture configuration of resolution
+- [ ] RPI camera module on the fly configuration of resolution
 - [ ] On the fly new Wi-Fi network connection from local web server (list SSIDs and input password)
 - [ ] Add a video cropping/zooming feature
 - [ ] Add audio with mic
-- [ ] Slow motion mode with automatic slow replay (or inside video player)
+- [ ] Slow motion mode with slow replay buttons
 - [ ] Fix automatic workflow package publish (build dependency issues with libcap)
 
 ## Documentation
