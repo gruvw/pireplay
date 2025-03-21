@@ -18,8 +18,8 @@ The device comes in two variants:
     <td><img height="300" src="./docs/images/pictures/pireplay_mini/PiReplay_mini-tripod.jpg"></td>
   </tr> 
   <tr>
-    <td>PiReplay</td>
-    <td>PiReplay Mini</td>
+    <td align="center">PiReplay</br>~100x75x45mm</td>
+    <td align="center">PiReplay Mini</br>~80x40x25mm</td>
   </tr> 
 </table>
 
@@ -46,7 +46,9 @@ Features:
 
 ### User Interface
 
-<!-- TODO pictures -->
+Web user interface from a phone:
+
+<img width="300" src="./docs/images/UI/home.jpg"> <img width="300" src="./docs/images/UI/settings.jpg"> 
 
 ## Project Structure
 
