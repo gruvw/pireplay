@@ -25,7 +25,7 @@ kept_replays: 20
 directory: "~/pireplay"
 
 # Name given to a new replay (without the file extension)
-# must be unique, or it will override the file with the same name
+# must be unique, or it will overwrite the same file with each new replay
 # support `strftime` strings, see https://strftime.org/ or `man strftime 3`
 replay_name: "%Y_%m_%d-%H:%M:%S"
 

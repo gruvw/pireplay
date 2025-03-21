@@ -31,12 +31,12 @@ def run(config, debug):
         safe_update_config_from_string(config.read())
 
     # get the current config from PiReplay directory
-    # overrides the passed directory
+    # overwrite the passed directory
     with open(config_func(Config.config_location), "a+") as file:
         file.seek(0)
         safe_update_config_from_string(file.read())
 
-    # do it a second time to override current config with argument passed one
+    # do it a second time to overwrite current config with argument passed one
     if config_content:
         safe_update_config_from_string(config_content)
 

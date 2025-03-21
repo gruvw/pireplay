@@ -7,7 +7,7 @@ Capture a video and instantly replay the last moments from your phone or compute
 </p>
 
 PiReplay is a device that allows you to instantly record and replay the past 5 to 60 seconds of real-life events directly from your phone or computer.
-This has unlimited applications but is primarly useful when analyzing a key moment in sports, reviewing gameplay, or simply reliving funny moments.
+This has unlimited applications but is primally useful when analyzing a key moment in sports, reviewing gameplay, or simply reliving funny moments.
 You simply press a button and instantly get a video of the last few seconds that just happened - live replay, IRL.
 
 The device comes in two variants:
@@ -52,7 +52,7 @@ Web user interface from a phone:
 
 ## Project Structure
 
-A bried overview of the project's structure for quick reference:
+A brief overview of the project's structure for quick reference:
 
 - [`cad`](./cad/): for 3D models files, 3D printing (case)
 - [`src`](./src/): the source code of the Python `pireplay` package
@@ -158,11 +158,20 @@ Congratulations! Your PiReplay device is now fully functional.
 
 ### Configuration
 
-<!-- TODO -->
+You can configure some options of the `pireplay` program by providing a [YAML](https://yaml.org/) configuration file to the CLI: `pireplay run --config ./path/to/config.yaml`.
+
+Check the documented default config file as an example: [`./src/pireplay/default_config.yaml`](./src/pireplay/default_config.yaml).
 
 ### API
 
-<!-- TODO -->
+If you wish to integrate PiReplay into a larger system (like streaming, robotics, ...), there is an API to access its functionality from other programs or scripts.
+
+Main endpoints:
+
+- `/capture` (POST): triggers a replay capture, sends the raw replay URL in the `Raw-Replay` response header.
+- `/raw-replay/<replay_name>.mp4` (GET): access video file of a given replay.
+- `/settings/capture-time` (POST, form data `index` set to the index of capture time options, see configuration file): changes the replay duration.
+- `/delete-replay` (DELETE, form data `replay` set to `<replay_name>`): deletes a given replay.
 
 ### Troubleshooting
 
