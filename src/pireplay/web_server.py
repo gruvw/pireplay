@@ -4,15 +4,17 @@ from flask import (
     Flask,
     render_template,
     redirect,
+    send_file,
     url_for,
     send_from_directory,
     request,
     abort,
 )
 
-from pireplay import replays
+from pireplay import camera, replays
 from pireplay.consts import (
     VIDEO_EXT,
+    Camera,
     Form,
     Route,
     Template,
@@ -31,8 +33,6 @@ from pireplay.network import (
     refresh_cached_ssids,
 )
 
-
-# TODO delete all replays endpoint with button in ui
 
 server = Flask(__name__)
 
@@ -64,8 +64,15 @@ def raw_replay(replay):
     )
 
 
+@server.route(Route.raw_snapshot)
+def raw_snapshot():
+    return send_file(Camera.SNAPSHOT_FILE)
+
+
 @server.route(Route.settings)
 def settings():
+    camera.save_snapshot()
+
     texts = lambda options: [o[1] for o in options]
 
     return render_template(
@@ -75,6 +82,7 @@ def settings():
         capture_times=texts(Option.capture_times),
         camera_resolutions=texts(Option.camera_resolutions),
         option_field=Form.option_field,
+        snapshot=Camera.SNAPSHOT_FILE,
     )
 
 
@@ -85,7 +93,20 @@ def capture():
     response = redirect(url_for(replay.__name__, replay=replay_name))
     response.headers.add(
         Header.raw_replay,
-        url_for(raw_replay.__name__, replay=replay_name)
+        url_for(raw_replay.__name__, replay=replay_name),
+    )
+
+    return response
+
+
+@server.route(Route.snapshot, methods=["POST"])
+def snapshot():
+    camera.save_snapshot()
+
+    response = redirect(url_for(settings.__name__, _anchor="camera-position"))
+    response.headers.add(
+        Header.raw_snapshot,
+        url_for(raw_snapshot.__name__),
     )
 
     return response

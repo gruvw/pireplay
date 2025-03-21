@@ -5,8 +5,8 @@
 {% block content %}
 
 <div class="actions">
-  <a id="settings" href={{ url_for("settings") }}>Settings</a>
-  <form action={{ url_for("capture") }} method="POST">
+  <a id="settings" href="{{ url_for("settings") }}">Settings</a>
+  <form action="{{ url_for("capture") }}" method="POST">
     <button id="capture">CAPTURE</button>
   </form>
 </div>
@@ -25,14 +25,14 @@
         {{ pr }}
         <form
           id="delete-replay"
-          action={{ url_for("delete_replay") }}
+          action="{{ url_for("delete_replay") }}"
           method="POST"
           onSubmit="return confirm('Do you want to delete this replay forever?');">
           <nobr>(<button name="{{ delete_field }}" value="{{ replay }}">delete</button>)</nobr>
         </form>
       </span>
       {% else %}
-      <a class="past-replay" href={{ url_for("replay", replay=pr) }}>
+      <a class="past-replay" href="{{ url_for("replay", replay=pr) }}">
         {{ pr }}
       </a>
       {% endif %}
@@ -40,10 +40,10 @@
     </div>
     <form
       id="delete-all-replays"
-      action={{ url_for("delete_all_replays") }}
+      action="{{ url_for("delete_all_replays") }}"
       method="POST"
       onSubmit="return confirm('Do you want to delete every single replay forever?');">
-      <nobr>(<button name="{{ delete_field }}" value="{{ replay }}">delete all replays</button>)</nobr>
+      <nobr>(<button>delete all replays</button>)</nobr>
     </form>
   {% else %}
     <p>No past replay...</p>

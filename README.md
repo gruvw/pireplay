@@ -42,6 +42,7 @@ Features:
 - Browse and watch past replays.
 - Download replays directly to your phone or computer for saving and sharing them.
 - Access the settings page to change the replay duration and camera resolution.
+- Snapshot picture in the settings page for camera positioning.
 - RESTful API to interoperate with other components of your digital system.
 
 ### User Interface
@@ -165,8 +166,10 @@ If you wish to integrate PiReplay into a larger system (like streaming, robotics
 
 Main endpoints:
 
-- `/capture` (POST): triggers a replay capture, sends the raw replay URL in the `Raw-Replay` response header.
+- `/capture` (POST): triggers a replay capture, sends the raw replay URL in the `Raw-Replay` response (redirect) header.
 - `/raw-replay/<replay_name>.mp4` (GET): access video file of a given replay.
+- `/snapshot` (POST): triggers an instantaneous snapshot picture, sends raw snapshot URL in `Raw-Snapshot` response (redirect) header.
+- `/raw-snapshot.jpg` (GET): the jpg picture of the instantaneous snapshot.
 - `/settings/capture-time` (POST, form data `index` set to the index of capture time options, see configuration file): changes the replay duration.
 - `/delete-replay` (POST, form data `replay` set to `<replay_name>`): deletes a given replay.
 - `/delete-all-replays` (POST): deletes every replay.

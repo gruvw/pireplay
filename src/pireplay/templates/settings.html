@@ -10,7 +10,7 @@
 <section>
   <h2>Capture Time</h2>
 
-  <form class="options capture-time" action={{ url_for("settings_capture_time") }} method="POST">
+  <form class="options capture-time" action="{{ url_for("settings_capture_time") }}" method="POST">
   {% for ct in capture_times %}
     {% if loop.index0 == capture_time_index %}
       <span class="option selected">{{ ct }}</span>
@@ -26,7 +26,7 @@
 <section>
   <h2>Camera Resolution</h2>
 
-  <form class="options camera-resolution" action={{ url_for("settings_camera_resolution") }} method="POST">
+  <form class="options camera-resolution" action="{{ url_for("settings_camera_resolution") }}" method="POST">
   {% for cr in camera_resolutions %}
     {% if loop.index0 == camera_resolution_index %}
       <span class="option selected">{{ cr }}</span>
@@ -36,6 +36,18 @@
       </button>
     {% endif %}
   {% endfor %}
+  </form>
+</section>
+
+<section>
+  <h2 id="camera-position">Camera position</h2>
+
+  <div class="snapshot">
+    <img src="{{ url_for("raw_snapshot") }}" alt="Camera Snapshot" id="snapshot">
+  </div>
+
+  <form id="refresh-snapshot" action="{{ url_for("snapshot") }}" method="POST">
+    <nobr><button>refresh snapshot</button></nobr>
   </form>
 </section>
 {% endblock %}

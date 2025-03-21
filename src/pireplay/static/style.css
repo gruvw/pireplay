@@ -50,7 +50,7 @@ nav a {
     color: var(--red);
 }
 
-video {
+video, #snapshot {
     width: 100%;
     max-width: 720px;
 }
@@ -59,7 +59,7 @@ span {
     display: inline-block;
 }
 
-.video {
+.video, .snapshot {
     display: flex;
     justify-content: center;
     margin: 0px 20px;
@@ -137,6 +137,7 @@ form.options {
 #settings {
     color: var(--blue);
     font-size: var(--section);
+    margin: 5px 0;
 }
 
 #capture {
@@ -162,4 +163,11 @@ form.options {
     text-align: center;
     margin: 15px 0 0 0;
     color: var(--red);
+}
+
+#refresh-snapshot {
+  display: block;
+  text-align: center;
+  margin: 15px 0 0 0;
+  color: var(--yellow)
 }

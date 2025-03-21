@@ -1,4 +1,5 @@
 VIDEO_EXT = ".mp4"
+SNAPSHOT_EXT = ".jpg"
 
 
 class Template:
@@ -15,9 +16,11 @@ class Route:
     raw_replay = f"/raw-replay/<string:replay>{VIDEO_EXT}"
     settings = "/settings"
     network = "/network"
+    raw_snapshot = f"/raw-snapshot{SNAPSHOT_EXT}"
 
     # POST
     capture = "/capture"
+    snapshot = "/snapshot"
     settings_capture_time = "/settings/capture-time"
     settings_camera_resolution = "/settings/camera-resolution"
     refresh_network = "/network/refresh"
@@ -30,6 +33,7 @@ class Route:
 
 class Header:
     raw_replay = "Raw-Replay"
+    raw_snapshot = "Raw-Snapshot"
 
 
 class Option:
@@ -48,6 +52,7 @@ class Camera:
     FPS = 60
     BUFFER_LEN = max(Option.capture_times_values)
     TMP_DIR = "/var/tmp/"
+    SNAPSHOT_FILE = f"{TMP_DIR}snapshot{SNAPSHOT_EXT}"
 
 
 class Config:

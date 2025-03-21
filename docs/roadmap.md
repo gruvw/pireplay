@@ -25,11 +25,12 @@
 - [X] Add `ap_ssid_no_suffix` configuration option
 - [X] Use video MP4 with standard video encoding (send through applications)
 - [X] Delete all stored replays button
-- [ ] Take a snapshot (picture) button
+- [X] Take a snapshot (picture) button
+- [ ] Switch recording to CircularOutput2 & PyavOutput (picamera2)
+- [ ] Add audio with mic
 - [ ] RPI camera module on the fly configuration of resolution
 - [ ] On the fly new Wi-Fi network connection from local web server (list SSIDs and input password)
 - [ ] Add a video cropping/zooming feature
-- [ ] Add audio with mic
 - [ ] Slow motion mode with slow replay buttons
 - [ ] Fix automatic workflow package publish (build dependency issues with libcap)
 
