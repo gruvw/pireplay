@@ -56,6 +56,7 @@ Therefore, I recommend building the standard version of the PiReplay if space is
 ### Requirements
 
 - Raspberry Pi board (recommended board: `Raspberry Pi 5 4GB` for PiReplay, or `Raspberry Pi Zero 2 W` for PiReplay Mini)
+- Cooling system (optional, better for the `Raspberry Pi 5`: Raspberry Pi Active Cooler for Pi 5)
 - Micro SD card (at least 64 GB)
 - Raspberry Pi Camera module 3 (regular 75° sensor)
 - CSI Camera FPC connector cable to Raspberry Pi (select the correct one depending on you Raspberry Pi board)
@@ -84,8 +85,8 @@ The top cover piece is common for both: [`./cad/pireplay/PiReplay-cover.stl`](./
 
 For the PiReplay Mini, you need to print the base and the cover:
 
-- Base: [`./cad/pireplay/PiReplay-base_camera_mount.stl`](./cad/pireplay/PiReplay-base_camera_mount.stl)
-- Cover: [`./cad/pireplay/PiReplay-base_screw_mount.stl`](./cad/pireplay/PiReplay-base_screw_mount.stl)
+- Base: [`./cad/pireplay_mini/PiReplay_mini-base.stl`](./cad/pireplay_mini/PiReplay_mini-base.stl)
+- Cover: [`./cad/pireplay_mini/PiReplay_mini-cover.stl`](./cad/pireplay_mini/PiReplay_mini-cover.stl)
 
 <!-- TODO pictures -->
 
@@ -118,7 +119,7 @@ You are now connected via SSH to your newly setup Raspberry Pi for PiReplay.
 
 After connecting to the Raspberry Pi via SSH, you can install and configure the `pireplay` software to run on it.
 
-```sh
+```bash
 sudo apt update
 sudo apt upgrade -y
 sudo rpi-update
