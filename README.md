@@ -2,14 +2,26 @@
 
 Capture a video and instantly replay the last moments from your phone or computer.
 
+<p align="center">
+  <img width="350" src="./docs/images/pictures/pireplay/PiReplay-front.jpg">
+</p>
+
 PiReplay is a device that allows you to instantly record and replay the past 5 to 60 seconds of real-life events directly from your phone or computer.
 This has unlimited applications but is primarly useful when analyzing a key moment in sports, reviewing gameplay, or simply reliving funny moments.
 You simply press a button and instantly get a video of the last few seconds that just happened - live replay, IRL.
 
 The device comes in two variants:
 
-PiReplay and PiReplay Mini
-<!-- TODO pictures -->
+<table>
+  <tr>
+    <td><img height="300" src="./docs/images/pictures/pireplay/PiReplay-tripod.jpg"></td>
+    <td><img height="300" src="./docs/images/pictures/pireplay_mini/PiReplay_mini-tripod.jpg"></td>
+  </tr> 
+  <tr>
+    <td>PiReplay</td>
+    <td>PiReplay Mini</td>
+  </tr> 
+</table>
 
 You can capture replays from a locally hosted web application `pireplay.local`, which controls a [Raspberry Pi](https://www.raspberrypi.com) with a camera.
 
@@ -77,9 +89,11 @@ For the standard variant of the PiReplay (using the `Raspberry Pi 5`), choose on
 
 The top cover piece is common for both: [`./cad/pireplay/PiReplay-cover.stl`](./cad/pireplay/PiReplay-cover.stl).
 
-<!-- TODO pictures -->
+<img width="230" src="./docs/images/cad/PiReplay-box.png">
 
 **Note** - This print is specifically designed to clip and assemble together, with no additional screws or glue needed. The Raspberry Pi board clips into place, the camera & nut slide into place (held by friction), and the cover snaps onto the base like a buckle clip.
+
+<img height="230" src="./docs/images/pictures/pireplay/PiReplay-inside.jpg"> <img height="230" src="./docs/images/pictures/pireplay/PiReplay-flat.jpg">
 
 ### PiReplay Mini
 
@@ -88,9 +102,11 @@ For the PiReplay Mini, you need to print the base and the cover:
 - Base: [`./cad/pireplay_mini/PiReplay_mini-base.stl`](./cad/pireplay_mini/PiReplay_mini-base.stl)
 - Cover: [`./cad/pireplay_mini/PiReplay_mini-cover.stl`](./cad/pireplay_mini/PiReplay_mini-cover.stl)
 
-<!-- TODO pictures -->
+<img width="230" src="./docs/images/cad/PiReplay_mini-box.png">
 
 **Note** - The Mini version is designed for minimal space usage. You may need glue to secure the parts and keep the case closed.
+
+<img height="230" src="./docs/images/pictures/pireplay_mini/PiReplay_mini-inside.jpg"> <img height="230" src="./docs/images/pictures/pireplay_mini/PiReplay_mini-flat.jpg">
 
 ### Quick Raspberry Pi Basic Setup
 
