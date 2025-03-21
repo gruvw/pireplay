@@ -1,5 +1,7 @@
 # PiReplay
 
+<a href="https://github.com/gruvw/pireplay/releases/latest" target="_blank"><img src="https://img.shields.io/github/v/release/gruvw/pireplay?style=for-the-badge&color=04cc04" alt="Latest Release Badge" /></a>
+
 Capture a video and instantly replay the last moments from your phone or computer.
 
 <p align="center">

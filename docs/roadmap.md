@@ -27,8 +27,8 @@
 - [X] Delete all stored replays button
 - [X] Take a snapshot (picture) button
 - [ ] Switch recording to CircularOutput2 & PyavOutput (picamera2)
-- [ ] Add audio with mic
 - [ ] RPI camera module on the fly configuration of resolution
+- [ ] Add audio with mic
 - [ ] On the fly new Wi-Fi network connection from local web server (list SSIDs and input password)
 - [ ] Add a video cropping/zooming feature
 - [ ] Slow motion mode with slow replay buttons
