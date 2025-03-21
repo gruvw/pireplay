@@ -14,9 +14,9 @@ def cli():
     pass
 
 
-@cli.command()
-@click.option("-c", "--config", type=click.File("r"))
-@click.option("--debug", is_flag=True)
+@cli.command(help="Starts the PiReplay server.")
+@click.option("-c", "--config", type=click.File("r"), help="Provide YAML PiReplay custom config file.")
+@click.option("--debug", is_flag=True, help="Enables debug mode. (for developers only)")
 def run(config, debug):
     print("Starting PiReplay server...")
 

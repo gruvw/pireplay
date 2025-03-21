@@ -41,3 +41,4 @@
 - [X] Document Web UI using screenshots
 - [X] Document yaml config and link the default config as example on README
 - [X] Document API usage for developers ("/capture" and "/raw-replay" + header and delete, integrate with another applications like streaming) on README
+- [X] CLI click documentation (proper `--help`)

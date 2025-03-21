@@ -48,5 +48,7 @@ def save_recording(path, length):
     _output.start()
     _output.stop()
 
-    os.system(f"ffmpeg -y -r {Camera.FPS} -i {Camera.TMP_DIR}buffer.h264 -c copy -fps_mode passthrough {Camera.TMP_DIR}tmp.mp4")
-    os.system(f"ffmpeg -y -r {Camera.FPS} -sseof -{length} -i {Camera.TMP_DIR}tmp.mp4 -c copy -fps_mode passthrough \"{path}\"")
+    # convert to MP4 stream with metadata
+    os.system(f"ffmpeg -y -r {Camera.FPS} -i {Camera.TMP_DIR}buffer.h264 -c copy {Camera.TMP_DIR}tmp.mp4")
+    # trim to only keep the end of the video
+    os.system(f"ffmpeg -y -r {Camera.FPS} -sseof -{length} -i {Camera.TMP_DIR}tmp.mp4 -c copy \"{path}\"")
