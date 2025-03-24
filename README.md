@@ -152,7 +152,7 @@ sudo apt upgrade -y
 sudo apt install -y python3-picamera2 --no-install-recommends
 sudo apt install -y ffmpeg python3-pip
 
-sudo pip install pireplay --break-system-packages
+sudo pip install pireplay --break-system-packages # or build/install from source
 
 (crontab -l 2>/dev/null; echo "@reboot sudo pireplay run") | crontab -
 
@@ -160,6 +160,19 @@ sudo reboot
 ```
 
 Congratulations! Your PiReplay device is now fully functional.
+
+#### Build from source
+
+Build and install the package from source (on the Raspberry Pi) using the following:
+
+```bash
+git clone https://github.com/gruvw/pireplay
+cd pireplay/src
+poetry build
+sudo pip install dist/pireplay-X.X.X.tar.gz --break-system-packages
+```
+
+**Note** - Requires [Poetry](https://python-poetry.org/).
 
 ### Configuration
 
