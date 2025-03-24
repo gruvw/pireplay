@@ -45,6 +45,7 @@ Features:
 - Download replays directly to your phone or computer for saving and sharing them.
 - Access the settings page to change the replay duration and camera resolution.
 - Snapshot picture in the settings page for camera positioning.
+- Vertical/horizontal videos support
 - RESTful API to interoperate with other components of your digital system.
 
 ### User Interface
@@ -165,6 +166,8 @@ Congratulations! Your PiReplay device is now fully functional.
 You can configure some options of the `pireplay` program by providing a [YAML](https://yaml.org/) configuration file to the CLI: `pireplay run --config /path/to/config.yaml`.
 
 Check the documented default config file as an example: [`./src/pireplay/default_config.yaml`](./src/pireplay/default_config.yaml).
+
+**Note** - Vertical video rotation (when using the vertical camera attachement cover variant) must be explicity set in the config file.
 
 ### API
 

@@ -3,8 +3,9 @@ import os
 from picamera2 import Picamera2, Preview
 from picamera2.encoders import H264Encoder
 from picamera2.outputs import CircularOutput
+from pireplay.config import config
 
-from pireplay.consts import Camera
+from pireplay.consts import Camera, Config
 
 
 _ENCODER = H264Encoder(4 * 1000000, iperiod=Camera.FPS)
@@ -50,10 +51,12 @@ def save_recording(path, length):
     _output.start()
     _output.stop()
 
+    vertical_arg = " -map_metadata 0 -metadata:s:v rotate=\"90\"" if config(Config.vertical_video) else ""
+
     # convert to MP4 stream with metadata
     os.system(f"ffmpeg -y -r {Camera.FPS} -i {Camera.TMP_DIR}buffer.h264 -c copy {Camera.TMP_DIR}tmp.mp4")
-    # trim to only keep the end of the video
-    os.system(f"ffmpeg -y -r {Camera.FPS} -sseof -{length} -i {Camera.TMP_DIR}tmp.mp4 -c copy \"{path}\"")
+    # trim to only keep the end of the video + rotate for vertical videos
+    os.system(f"ffmpeg -y -r {Camera.FPS} -sseof -{length} -i {Camera.TMP_DIR}tmp.mp4{vertical_arg} -c copy \"{path}\"")
 
 
 def save_snapshot():

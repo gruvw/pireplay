@@ -44,3 +44,6 @@ ap_password: "pireplay42"
 # Could set to true when using a single PiReplay device (optional),
 # disables MAC address suffix on SSID
 ap_ssid_no_suffix: false
+
+# Vertical video (rotate image), (optional)
+vertical_video: false

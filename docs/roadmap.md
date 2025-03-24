@@ -26,7 +26,7 @@
 - [X] Use video MP4 with standard video encoding (send through applications)
 - [X] Delete all stored replays button
 - [X] Take a snapshot (picture) button
-- [ ] Option in config for recording vertical videos (rotate the image), https://github.com/gruvw/pireplay/issues/1
+- [X] Option in config for recording vertical videos (rotate the image), https://github.com/gruvw/pireplay/issues/1
 - [ ] Fix the slow response to capture requests in AP mode, https://github.com/gruvw/pireplay/issues/2
 - [ ] HTTPS and SSL certificate offline locally hosted
 - [ ] Switch recording to CircularOutput2 & PyavOutput (picamera2)

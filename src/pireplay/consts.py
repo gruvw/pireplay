@@ -73,6 +73,8 @@ class Config:
     ap_ssid_no_suffix = "ap_ssid_no_suffix"
     ap_password = "ap_password"
 
+    vertical_video = "vertical_video"
+
     config_options = [
         (capture_time_index, Option.capture_times),
         (camera_resolution_index, Option.camera_resolutions),
