@@ -92,7 +92,10 @@ For the standard variant of the PiReplay (using the `Raspberry Pi 5`), choose on
 - With a standard tripod camera mount (1/4"-20 UNC): [`./cad/pireplay/PiReplay-base_camera_mount.stl`](./cad/pireplay/PiReplay-base_camera_mount.stl)
 - With rail screw mounts: [`./cad/pireplay/PiReplay-base_screw_mount.stl`](./cad/pireplay/PiReplay-base_screw_mount.stl)
 
-The top cover piece is common for both: [`./cad/pireplay/PiReplay-cover.stl`](./cad/pireplay/PiReplay-cover.stl).
+The top cover piece is common for both:
+
+- For horizontal videos: [`./cad/pireplay/PiReplay-cover.stl`](./cad/pireplay/PiReplay-cover.stl).
+- For vertical videos: [`./cad/pireplay/PiReplay-cover-vertical.stl`](./cad/pireplay/PiReplay-cover-vertical.stl).
 
 <img width="230" src="./docs/images/cad/PiReplay-box.png">
 
@@ -105,7 +108,8 @@ The top cover piece is common for both: [`./cad/pireplay/PiReplay-cover.stl`](./
 For the PiReplay Mini, you need to print the base and the cover:
 
 - Base: [`./cad/pireplay_mini/PiReplay_mini-base.stl`](./cad/pireplay_mini/PiReplay_mini-base.stl)
-- Cover: [`./cad/pireplay_mini/PiReplay_mini-cover.stl`](./cad/pireplay_mini/PiReplay_mini-cover.stl)
+- Cover for horizontal videos: [`./cad/pireplay_mini/PiReplay_mini-cover.stl`](./cad/pireplay_mini/PiReplay_mini-cover.stl)
+- Cover for vertical videos: [`./cad/pireplay_mini/PiReplay_mini-cover-vertical.stl`](./cad/pireplay_mini/PiReplay_mini-cover-vertical.stl)
 
 <img width="230" src="./docs/images/cad/PiReplay_mini-box.png">
 
