@@ -166,6 +166,7 @@ Congratulations! Your PiReplay device is now fully functional.
 Build and install the package from source (on the Raspberry Pi) using the following:
 
 ```bash
+sudo apt install -y git
 git clone https://github.com/gruvw/pireplay
 cd pireplay/src
 poetry build
