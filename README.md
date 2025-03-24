@@ -67,7 +67,7 @@ Follow these instructions (tutorial) for setting up a fully functional **PiRepla
 
 **PiReplay vs. PiReplay Mini**
 
-The PiReplay Mini (~4 times smaller) was introduced into the project as a fun and compact alternative when space-constrained applications.
+The PiReplay Mini (~4 times smaller) was introduced into the project as a fun and compact alternative for space-constrained applications.
 However, it uses a smaller, resource limited microcomputer, making it not the best choice to perform high resolution video processing.
 Therefore, I recommend building the standard version of the PiReplay if space isn't a concern.
 
@@ -161,9 +161,9 @@ sudo reboot
 
 Congratulations! Your PiReplay device is now fully functional.
 
-#### Build from source
+#### Build from source (optional)
 
-Build and install the package from source (on the Raspberry Pi) using the following:
+If you prefer to build and install the PiReplay package from source (on the Raspberry Pi), use the following:
 
 ```bash
 sudo apt install -y git
@@ -181,7 +181,7 @@ You can configure some options of the `pireplay` program by providing a [YAML](h
 
 Check the documented default config file as an example: [`./src/pireplay/default_config.yaml`](./src/pireplay/default_config.yaml).
 
-**Note** - Vertical video rotation (when using the vertical camera attachement cover variant) must be explicity set in the config file.
+**Note** - Vertical video rotation (when using the vertical camera attachement cover variant) must be explicitly set in the config file.
 
 ### API
 
