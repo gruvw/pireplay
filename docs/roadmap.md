@@ -26,6 +26,7 @@
 - [X] Use video MP4 with standard video encoding (send through applications)
 - [X] Delete all stored replays button
 - [X] Take a snapshot (picture) button
+- [ ] HTTPS and SSL certificate offline locally hosted
 - [ ] Switch recording to CircularOutput2 & PyavOutput (picamera2)
 - [ ] RPI camera module on the fly configuration of resolution
 - [ ] Add audio with mic
