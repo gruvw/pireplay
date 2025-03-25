@@ -146,14 +146,18 @@ You are now connected via SSH to your newly setup Raspberry Pi for PiReplay.
 After connecting to the Raspberry Pi via SSH, you can install and configure the `pireplay` software to run on it.
 
 ```bash
+# Update/upgrade packages
 sudo apt update
 sudo apt upgrade -y
 
+# Install requirements
 sudo apt install -y python3-picamera2 --no-install-recommends
 sudo apt install -y ffmpeg python3-pip
 
+# Install PiReplay
 sudo pip install pireplay --break-system-packages # or build/install from source
 
+# Launch PiReplay automatically on reboot
 (crontab -l 2>/dev/null; echo "@reboot sudo pireplay run") | crontab -
 
 sudo reboot
@@ -182,6 +186,10 @@ You can configure some options of the `pireplay` program by providing a [YAML](h
 Check the documented default config file as an example: [`./src/pireplay/default_config.yaml`](./src/pireplay/default_config.yaml).
 
 **Note** - Vertical video rotation (when using the vertical camera attachement cover variant) must be explicitly set in the config file.
+
+The PiReplay CLI saves the previous config (and UI set) parameters that were last used and will keep them on the next launch and across reboots (if not overwritten by passed config).
+It might induce confusion as removing a line from your config file won't yield the same result as when it was not present in the first place.
+If you want the default value of a config option, please refer to the [`./src/pireplay/default_config.yaml`](default_config.yaml) file.
 
 ### API
 
