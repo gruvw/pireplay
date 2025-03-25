@@ -2,12 +2,13 @@
 # Default number of seconds to record on capture, as index in the list of options
 # (RPI in-memory circular buffer)
 # Options:
-#   0: 3 seconds
-#   1: 5 seconds
-#   2: 10 seconds
-#   3: 20 seconds
-#   4: 30 seconds
-#   5: 60 seconds
+#   0:  3 seconds
+#   1:  5 seconds
+#   2:  7 seconds
+#   3: 10 seconds
+#   4: 20 seconds
+#   5: 30 seconds
+#   6: 60 seconds
 capture_time_index: 1
 
 # Default resolution to use for the camera, as index in the list of options

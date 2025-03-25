@@ -167,7 +167,7 @@ If you prefer to build and install the PiReplay package from source (on the Rasp
 
 ```bash
 sudo apt install -y git
-git clone https://github.com/gruvw/pireplay
+git clone --depth 1 https://github.com/gruvw/pireplay
 cd pireplay/src
 poetry build
 sudo pip install dist/pireplay-X.X.X.tar.gz --break-system-packages
