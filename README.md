@@ -48,6 +48,8 @@ Features:
 - Vertical/horizontal videos support
 - RESTful API to interoperate with other components of your digital system.
 
+**Warning** - There are currently no security feature built in the PiReplay software. You should consider that anyone accessing the PiReplay's network could be accessing replays and remotely operate the device.
+
 ### User Interface
 
 Web user interface from a phone:
