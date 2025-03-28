@@ -49,7 +49,6 @@ class Option:
 
 
 class Camera:
-    FPS = 60
     BUFFER_LEN = max(Option.capture_times_values)
     TMP_DIR = "/var/tmp/"
     SNAPSHOT_FILE = f"{TMP_DIR}snapshot{SNAPSHOT_EXT}"
@@ -59,6 +58,7 @@ class Config:
     # see `default_config.yaml` for fields documentation
     capture_time_index = "capture_time_index"
     camera_resolution_index = "camera_resolution_index"
+    camera_framerate = "camera_framerate"
     kept_replays = "kept_replays"
     directory = "directory"
     replays_location = "replays_location"

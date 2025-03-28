@@ -18,6 +18,10 @@ capture_time_index: 1
 #   2: 1536 × 864 120 FPS
 camera_resolution_index: 1
 
+# Camera Frame Rate
+# Default 60 FPS, if you experience flickering LED lights, try 50 FPS
+camera_framerate: 60
+
 # Number of replays to keep on disk (if full, oldest is deleted)
 # minimum 1, maximum 500 (check SD card storage)
 kept_replays: 20
