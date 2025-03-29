@@ -50,6 +50,15 @@ Features:
 
 **Warning** - There are currently no security feature built in the PiReplay software. You should consider that anyone accessing the PiReplay's network could be accessing replays and remotely operate the device.
 
+This project is **not** (out of scope features or non-goals):
+
+- A live webcam feed.
+- A continuous video camera for long videos.
+- A video editor, editing must be done externally after downloading the replay.
+- A multi-camera synchronization system, only one camera per device is supported.
+- A home security video recording system.
+- A motion triggered or AI-based capture system, you must manually trigger replays.
+
 ### User Interface
 
 Web user interface from a phone:

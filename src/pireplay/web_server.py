@@ -77,10 +77,10 @@ def settings():
 
     return render_template(
         Template.settings,
-        capture_time_index=config(Config.capture_time_index),
-        camera_resolution_index=config(Config.camera_resolution_index),
         capture_times=texts(Option.capture_times),
+        capture_time_index=config(Config.capture_time_index),
         camera_resolutions=texts(Option.camera_resolutions),
+        camera_resolution_index=config(Config.camera_resolution_index),
         option_field=Form.option_field,
         snapshot=Camera.SNAPSHOT_FILE,
     )

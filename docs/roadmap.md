@@ -27,6 +27,8 @@
 - [X] Delete all stored replays button
 - [X] Take a snapshot (picture) button
 - [X] Option in config for recording vertical videos (rotate the image), https://github.com/gruvw/pireplay/issues/1
+- [ ] Add manual video download button (should work on Safari)
+- [ ] Make auto-focus an option with three choices: focus on startup, focus on startup+refresh+capture, constant auto-focus
 - [ ] Fix the slow response to capture requests in AP mode, https://github.com/gruvw/pireplay/issues/2
 - [ ] HTTPS and SSL certificate offline locally hosted
 - [ ] Switch recording to CircularOutput2 & PyavOutput (picamera2)
