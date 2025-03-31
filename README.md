@@ -9,7 +9,7 @@ Capture a video and instantly replay the last moments from your phone or compute
 </p>
 
 PiReplay is a device that allows you to instantly record and replay the past 5 to 60 seconds of real-life events directly from your phone or computer.
-This has unlimited applications but is primally useful when analyzing a key moment in sports, reviewing gameplay, or simply reliving funny moments.
+This has unlimited applications but is primally useful when analyzing key moments in sports, capturing trick shots, reviewing gameplay, or simply reliving funny moments.
 You simply press a button and instantly get a video of the last few seconds that just happened - live replay, IRL.
 
 The device comes in two variants:
