@@ -8,7 +8,7 @@ from pireplay.config import config
 from pireplay.consts import Camera, Config
 
 
-_ENCODER = H264Encoder(4 * 1000000, iperiod=Camera.FPS)
+_ENCODER = H264Encoder(4 * 1000000, iperiod=int(config(Config.camera_framerate)))
 _cam, _output = None, None
 
 
@@ -28,13 +28,13 @@ def setup_camera():
 
     video_config = _cam.create_video_configuration(
         main={"size": (1280, 720)},
-        controls={"FrameRate": Camera.FPS, "AfMode": 2}
+        controls={"FrameRate": int(config(Config.camera_framerate)), "AfMode": 2}
     )
     _cam.configure(video_config)
 
     _cam.start_preview(Preview.NULL)
 
-    _output = CircularOutput(buffersize=Camera.BUFFER_LEN*Camera.FPS)
+    _output = CircularOutput(buffersize=Camera.BUFFER_LEN*int(config(Config.camera_framerate)))
     _cam.start_recording(_ENCODER, _output)
 
     delete_snapshot()
@@ -54,9 +54,9 @@ def save_recording(path, length):
     vertical_arg = " -map_metadata 0 -metadata:s:v rotate=\"90\"" if config(Config.vertical_video) else ""
 
     # convert to MP4 stream with metadata
-    os.system(f"ffmpeg -y -r {Camera.FPS} -i {Camera.TMP_DIR}buffer.h264 -c copy {Camera.TMP_DIR}tmp.mp4")
+    os.system(f"ffmpeg -y -r {int(config(Config.camera_framerate))} -i {Camera.TMP_DIR}buffer.h264 -c copy {Camera.TMP_DIR}tmp.mp4")
     # trim to only keep the end of the video + rotate for vertical videos
-    os.system(f"ffmpeg -y -r {Camera.FPS} -sseof -{length} -i {Camera.TMP_DIR}tmp.mp4{vertical_arg} -c copy \"{path}\"")
+    os.system(f"ffmpeg -y -r {int(config(Config.camera_framerate))} -sseof -{length} -i {Camera.TMP_DIR}tmp.mp4{vertical_arg} -c copy \"{path}\"")
 
 
 def save_snapshot():
