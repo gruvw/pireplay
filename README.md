@@ -97,7 +97,9 @@ Therefore, I recommend building the standard version of the PiReplay if space is
 
 You can 3D print the corresponding enclosure for the PiReplay device.
 
-### PiReplay
+**Note** - Check out the project on Thingiverse: <https://www.thingiverse.com/thing:7048794>.
+
+#### PiReplay
 
 For the standard variant of the PiReplay (using the `Raspberry Pi 5`), choose one of the following base options:
 
@@ -115,7 +117,7 @@ The top cover piece is common for both:
 
 <img height="230" src="./docs/images/pictures/pireplay/PiReplay-inside.jpg"> <img height="230" src="./docs/images/pictures/pireplay/PiReplay-flat.jpg">
 
-### PiReplay Mini
+#### PiReplay Mini
 
 For the PiReplay Mini, you need to print the base and the cover:
 
